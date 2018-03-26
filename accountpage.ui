@@ -445,7 +445,7 @@ font: 12px &quot;微软雅黑&quot;;}</string>
    </column>
    <column>
     <property name="text">
-     <string>手续费/GDW</string>
+     <string>手续费/CDC</string>
     </property>
     <property name="font">
      <font>

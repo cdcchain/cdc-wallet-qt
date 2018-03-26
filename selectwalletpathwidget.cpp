@@ -58,7 +58,7 @@ void SelectWalletPathWidget::on_okBtn_clicked()
     CDC::getInstance()->startBlockChain(QStringList() << "--data-dir" << ui->pathLineEdit->text()
                                         << "--rpcuser" << "a" << "--rpcpassword" << "b" << "--rpcport" << QString::number(RPC_PORT) << "--server");
 #else
-    GDW::getInstance()->proc->start("./cdc",QStringList() << "--data-dir" << ui->pathLineEdit->text()
+    CDC::getInstance()->proc->start("./cdc",QStringList() << "--data-dir" << ui->pathLineEdit->text()
                                        << "--rpcuser" << "a" << "--rpcpassword" << "b" << "--rpcport" << QString::number( RPC_PORT) << "--server");
 #endif
     if( CDC::getInstance()->proc->waitForStarted())
