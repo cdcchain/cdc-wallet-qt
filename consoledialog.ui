@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ConsoleDialog</class>
+ <widget class="QDialog" name="ConsoleDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>628</width>
+    <height>468</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#ConsoleDialog{border:1px solid rgb(40,28,64);background-color:white;}
+QLineEdit{border:1px solid rgb(214,214,214);border-radius:4px;padding: 0px 8px 0px 8px;font: 12px &quot;微软雅黑&quot;;}
+QLabel{font: 12px &quot;微软雅黑&quot;;}</string>
+  </property>
+  <widget class="QLineEdit" name="consoleLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>55</x>
+     <y>131</y>
+     <width>520</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>-1</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::DefaultContextMenu</enum>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>100</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="text">
+    <string>RPC方式</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="closeBtn">
+   <property name="geometry">
+    <rect>
+     <x>587</x>
+     <y>20</y>
+     <width>19</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>34</x>
+     <y>17</y>
+     <width>70</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>-1</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>控制台</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QTextBrowser" name="consoleBrowser">
+   <property name="geometry">
+    <rect>
+     <x>55</x>
+     <y>173</y>
+     <width>520</width>
+     <height>220</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>-1</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::DefaultContextMenu</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTextBrowser{border:1px solid rgb(214,214,214);border-radius:4px;padding: 0px 8px 0px 8px;font: 12px &quot;微软雅黑&quot;;}</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="clearBtn">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>98</y>
+     <width>50</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font/>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QToolButton{background-color:rgb(125,85,40);color:#ffffff;border:none;border-radius:16px;}
+QToolButton:hover{background-color:rgb(185,150,85);}
+QToolButton:disabled{background-color:#cecece;}</string>
+   </property>
+   <property name="text">
+    <string>清空</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="titleLabel">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>628</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>55</x>
+     <y>100</y>
+     <width>311</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>-1</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>在此输入命令并回车</string>
+   </property>
+  </widget>
+  <zorder>titleLabel</zorder>
+  <zorder>consoleLineEdit</zorder>
+  <zorder>checkBox</zorder>
+  <zorder>label</zorder>
+  <zorder>consoleBrowser</zorder>
+  <zorder>clearBtn</zorder>
+  <zorder>label_2</zorder>
+  <zorder>closeBtn</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,61 @@
+<RCC>
+    <qresource prefix="/qm">
+        <file alias="qt_zh_cn">qt_zh_CN.qm</file>
+    </qresource>
+    <qresource prefix="/pic">
+        <file>pic2/minimize2.png</file>
+        <file>pic2/minimize_hover.png</file>
+        <file>pic2/close2.png</file>
+        <file>pic2/close_hover.png</file>
+        <file>pic2/set.png</file>
+        <file>pic2/lockBtn.png</file>
+        <file>pic2/close3.png</file>
+        <file>pic2/close4.png</file>
+        <file>pic2/checkBox_unchecked.png</file>
+        <file>pic2/pwdTip.png</file>
+        <file>pic2/correct2.png</file>
+        <file>pic2/comboBoxArrow.png</file>
+        <file>pic2/loading2.gif</file>
+        <file>pic2/loading.gif</file>
+        <file>pic2/contactBtn2_hover.png</file>
+        <file>pic2/contactBtn2.png</file>
+        <file>pic2/arrow_hover.png</file>
+        <file>pic2/correct.png</file>
+        <file>pic2/wrong.png</file>
+        <file>pic2/arrow.png</file>
+        <file>cplpic/edit.png</file>
+        <file>cplpic/network.png</file>
+        <file>cplpic/addContactBtn.png</file>
+        <file>cplpic/checkBox_checked.png</file>
+        <file>cplpic/accountBtn.png</file>
+        <file>cplpic/accountBtn_unselected.png</file>
+        <file>cplpic/contactBtn.png</file>
+        <file>cplpic/contactBtn_unselected.png</file>
+        <file>cplpic/transferBtn.png</file>
+        <file>cplpic/transferBtn_unselected.png</file>
+        <file>cplpic/copy.png</file>
+        <file>cplpic/refresh.gif</file>
+        <file>cplpic/refresh.png</file>
+        <file>cplpic/assetBtn.png</file>
+        <file>cplpic/assetBtn_unselected.png</file>
+        <file>cplpic/marketBtn.png</file>
+        <file>cplpic/marketBtn_unselected.png</file>
+        <file>cplpic/info.png</file>
+        <file>cplpic/bg.png</file>
+        <file>cplpic/titleBg2.png</file>
+        <file>cplpic/titleBg3.png</file>
+        <file>cplpic/titleBg.png</file>
+        <file>pic2/contactBtn2_En.png</file>
+        <file>pic2/contactBtn2_hover_En.png</file>
+        <file>pic2/send.png</file>
+        <file>cplpic/refresh2.gif</file>
+        <file>cplpic/refresh2.png</file>
+        <file>pic2/qrcode.png</file>
+        <file>cplpic/logo.png</file>
+    </qresource>
+    <qresource prefix="/language">
+        <file>wallet_English.qm</file>
+        <file>wallet_simplified_Chinese.qm</file>
+        <file>widgets.qm</file>
+    </qresource>
+</RCC>

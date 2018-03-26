@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ImportDialog</class>
+ <widget class="QDialog" name="ImportDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>960</width>
+    <height>580</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>960</width>
+     <height>580</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="containerWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>209</x>
+      <y>153</y>
+      <width>542</width>
+      <height>274</height>
+     </rect>
+    </property>
+    <widget class="QToolButton" name="cancelBtn">
+     <property name="geometry">
+      <rect>
+       <x>276</x>
+       <y>167</y>
+       <width>120</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QToolButton{background-color:#ffffff;color:#484848;border:1px solid rgb(105,67,155);border-radius:3px;}
+QToolButton:hover{color:rgb(105,67,155);}</string>
+     </property>
+     <property name="text">
+      <string>取消</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="privateKeyLineEdit">
+     <property name="geometry">
+      <rect>
+       <x>77</x>
+       <y>95</y>
+       <width>390</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="contextMenuPolicy">
+      <enum>Qt::DefaultContextMenu</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="importBtn">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>167</y>
+       <width>120</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QToolButton{background-color:rgb(105,67,155);color:#ffffff;border:none;border-radius:3px;}
+QToolButton:hover{background-color:rgb(125,87,180);}
+QToolButton:disabled{background-color:#cecece;}</string>
+     </property>
+     <property name="text">
+      <string>导入</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="tipLabel">
+     <property name="geometry">
+      <rect>
+       <x>-171</x>
+       <y>77</y>
+       <width>261</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 78, 54);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>79</x>
+       <y>61</y>
+       <width>300</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>请 [选择] 或 [输入] 私钥</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pathBtn">
+     <property name="geometry">
+      <rect>
+       <x>398</x>
+       <y>52</y>
+       <width>70</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{border:1px solid rgb(160,160,160);
+border-radius:3px;
+background-color: rgb(255, 255, 255);
+color: rgb(53, 53, 53);
+}
+QPushButton::hover{color: rgb(153, 153, 153);}</string>
+     </property>
+     <property name="text">
+      <string>选择私钥</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>privateKeyLineEdit</tabstop>
+  <tabstop>importBtn</tabstop>
+  <tabstop>cancelBtn</tabstop>
+  <tabstop>pathBtn</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

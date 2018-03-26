@@ -1,1 +1,1 @@
-# cdc-wallet-qt
+# gdwcoin
