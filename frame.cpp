@@ -191,11 +191,11 @@ Frame::Frame(): timer(NULL),
 
             if( CDC::getInstance()->proc->waitForStarted())
             {
-                qDebug() << "laungh hcash succeeded";
+                qDebug() << "launch cdc succeeded";
             }
             else
             {
-                qDebug() << "laungh hcash failed";
+                qDebug() << "launch cdc failed";
             }
 #endif
 
@@ -217,10 +217,6 @@ Frame::Frame(): timer(NULL),
     trayIcon->show();
     createTrayIconActions();
     createTrayIcon();
-
-
-
-
 
 
     DLOG_QT_WALLET_FUNCTION_END;
@@ -526,11 +522,6 @@ void Frame::privateKeyImported()
 
 void Frame::mousePressEvent(QMouseEvent *event)
 {
-//    if( Hcash::getInstance()->notProduce)
-//    {
-//        updateTimer();
-//    }
-
     if(event->button() == Qt::LeftButton)
      {
           mouse_press = true;
@@ -1152,18 +1143,6 @@ void Frame::jsonDataUpdated(QString id)
 
     if( id.mid(0,37) == "id_wallet_get_account_public_address-" )
     {
-//        QString  result = Hcash::getInstance()->jsonDataValue(id);
-//        QString name = id.mid(37);
-
-//        if( result.mid(0,9) == "\"result\":")
-//        {
-//            QString address = result.mid(10);
-//            address.remove('\"');
-//            Hcash::getInstance()->addressMapInsert(name, address);
-
-//            refreshAccountInfo();
-//        }
-
         return;
     }
 

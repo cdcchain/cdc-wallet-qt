@@ -8,7 +8,6 @@ EditRemarkDialog::EditRemarkDialog(QString remark, QWidget *parent) :
 {
     ui->setupUi(this);
 
-//    Hcash::getInstance()->appendCurrentDialogVector(this);
     setParent(CDC::getInstance()->mainFrame);
 
     setAttribute(Qt::WA_TranslucentBackground, true);
@@ -30,23 +29,15 @@ EditRemarkDialog::EditRemarkDialog(QString remark, QWidget *parent) :
 EditRemarkDialog::~EditRemarkDialog()
 {
     delete ui;
-//    Hcash::getInstance()->removeCurrentDialogVector(this);
 }
 
 void EditRemarkDialog::on_okBtn_clicked()
 {
     close();
-//    emit accepted();
 }
 
 QString EditRemarkDialog::pop()
 {
-//    QEventLoop loop;
-//    show();
-//    ui->remarkLineEdit->grabKeyboard();
-//    connect(this,SIGNAL(accepted()),&loop,SLOT(quit()));
-//    loop.exec();  //进入事件 循环处理，阻塞
-
     move(0,0);
     exec();
 

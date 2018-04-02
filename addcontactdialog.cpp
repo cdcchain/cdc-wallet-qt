@@ -12,7 +12,6 @@ AddContactDialog::AddContactDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-//    Hcash::getInstance()->appendCurrentDialogVector(this);
     setParent(CDC::getInstance()->mainFrame);
 
     setAttribute(Qt::WA_TranslucentBackground, true);
@@ -54,16 +53,10 @@ AddContactDialog::AddContactDialog(QWidget *parent) :
 AddContactDialog::~AddContactDialog()
 {
     delete ui;
-//    Hcash::getInstance()->removeCurrentDialogVector(this);
 }
 
 void AddContactDialog::pop()
 {
-//    QEventLoop loop;
-//    show();
-//    connect(this,SIGNAL(accepted()),&loop,SLOT(quit()));
-//    loop.exec();  //进入事件 循环处理，阻塞
-
     move(0,0);
     exec();
 }
@@ -76,24 +69,6 @@ void AddContactDialog::on_cancelBtn_clicked()
 
 void AddContactDialog::jsonDataUpdated(QString id)
 {
-//    if( id != "id_blockchain_get_account")  return;
-
-//    QString result = Hcash::getInstance()->jsonDataValue( id);
-//    ui->gifLabel->hide();
-
-//    if( result == "\"result\":null")
-//    {
-//        ui->tipLabel->setText(tr("Invalid address"));
-//        ui->tipLabel2->setPixmap(QPixmap(":/pic/pic2/wrong.png"));
-//        ui->okBtn->setEnabled(false);
-//    }
-//    else
-//    {
-//        ui->tipLabel->setText(tr("<body><font color=green>Valid address</font></body>"));
-//        ui->tipLabel2->setPixmap(QPixmap(":/pic/pic2/correct.png"));
-//        ui->okBtn->setEnabled(true);
-//    }
-
 }
 
 void AddContactDialog::on_okBtn_clicked()
@@ -120,7 +95,6 @@ void AddContactDialog::on_okBtn_clicked()
     foreach (QString ss, strList)
     {
         if( (ss.mid(0, ss.indexOf('=')) == ui->addressLineEdit->text())
-//             && ss.mid( ss.indexOf('=') + 1) ==  ui->remarkLineEdit->text()
           )
         {
             ui->tipLabel->setText(tr("Already existed"));
@@ -150,7 +124,6 @@ void AddContactDialog::on_okBtn_clicked()
     CDC::getInstance()->contactsFile->close();
 
     close();
-//    emit accepted();
 }
 
 void AddContactDialog::on_remarkLineEdit_textChanged(const QString &arg1)
@@ -175,12 +148,6 @@ bool AddContactDialog::eventFilter(QObject *watched, QEvent *e)
     {
         if( e->type() == QEvent::Paint)
         {
-//            QPainter painter(ui->containerWidget);
-//            painter.setPen(QPen(QColor(122,112,110),Qt::SolidLine));
-//            painter.setBrush(QBrush(QColor(122,112,110),Qt::SolidPattern));
-//            painter.drawRect(0,0,756,50);
-
-
             return true;
         }
     }

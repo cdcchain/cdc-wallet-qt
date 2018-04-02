@@ -95,8 +95,6 @@ void BottomBar::jsonDataUpdated(QString id)
         QString num = result.mid( pos2, result.indexOf("\"blockchain_head_block_age\":") - pos2 - 1);
 
         if( seconds.toInt() < 0)  seconds = "0";
-//        int numToSync = seconds.toInt()/ 10;
-
 
         ui->syncLabel->setText( tr("Local block height:  ") + num );
         CDC::getInstance()->currentBlockHeight = num.toInt();
@@ -122,9 +120,5 @@ void BottomBar::jsonDataUpdated(QString id)
 void BottomBar::refresh()
 {
     CDC::getInstance()->postRPC( toJsonFormat( "id_info", "info", QStringList() << ""));
-
     CDC::getInstance()->postRPC( toJsonFormat( "id_blockchain_list_assets", "blockchain_list_assets", QStringList() << ""));
-
-//    Hcash::getInstance()->postRPC( toJsonFormat( "id_balance", "balance", QStringList() << ""));
-
 }

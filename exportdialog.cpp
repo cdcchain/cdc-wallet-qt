@@ -19,7 +19,6 @@ ExportDialog::ExportDialog( QString name, QWidget *parent) :
 {
     ui->setupUi(this);
 
-//    Hcash::getInstance()->appendCurrentDialogVector(this);
     setParent(CDC::getInstance()->mainFrame);
 
     setAttribute(Qt::WA_TranslucentBackground, true);
@@ -50,19 +49,12 @@ ExportDialog::ExportDialog( QString name, QWidget *parent) :
 ExportDialog::~ExportDialog()
 {
     delete ui;
-//    Hcash::getInstance()->removeCurrentDialogVector(this);
 }
 
 void ExportDialog::pop()
 {
-//    QEventLoop loop;
-//    show();
-//    connect(this,SIGNAL(accepted()),&loop,SLOT(quit()));
-//    loop.exec();  //进入事件 循环处理，阻塞
-
     move(0,0);
     exec();
-
 }
 
 void ExportDialog::on_pathBtn_clicked()
@@ -82,24 +74,15 @@ void ExportDialog::on_pathBtn_clicked()
 void ExportDialog::on_cancelBtn_clicked()
 {
     CommonDialog commonDialog(CommonDialog::OkAndCancel);
-//    commonDialog.setText(QString::fromLocal8Bit("您还没有备份私钥，如果数据丢失/损坏 您将没有任何途径找回您的账户。是否确定取消备份?"));
     commonDialog.setText(tr("You have not backup this private key.If your wallet data is lost or corrupted, you will have no way to get your account back.Sure to cancel?"));
     if(commonDialog.pop())
     {
         close();
     }
-
-//    emit accepted();
 }
 
 void ExportDialog::getPrivateKey()
 {
-//    RpcThread* rpcThread = new RpcThread;
-//    connect(rpcThread,SIGNAL(finished()),rpcThread,SLOT(deleteLater()));
-//    rpcThread->setLogin("a","b");
-//    rpcThread->setWriteData( toJsonFormat( "id_wallet_dump_account_private_key_" + accoutName, "wallet_dump_account_private_key", QStringList() << accoutName << "0" ));
-//    rpcThread->start();
-
     CDC::getInstance()->postRPC( toJsonFormat( "id_wallet_dump_account_private_key_" + accoutName, "wallet_dump_account_private_key", QStringList() << accoutName << "0" ));
 }
 
@@ -157,10 +140,8 @@ void ExportDialog::jsonDataUpdated(QString id)
             file.close();
 
             close();
-//            emit  accepted();
 
             CommonDialog tipDialog(CommonDialog::OkOnly);
-//            tipDialog.setText( tr( "Export to ") + fName + tr(" succeeded!") + QString::fromLocal8Bit("请妥善保管您的私钥，绝对不要丢失或泄露给任何人!") );
             tipDialog.setText( tr( "Export to ") + fName + tr(" succeeded!") + tr("Please keep your private key properly.Never lose or leak it to anyone!") );
             tipDialog.pop();
 

@@ -7,7 +7,6 @@
 #include "control/shadowwidget.h"
 #include "dialog/importenterpwddialog.h"
 #include "AES/aesencryptor.h"
-#include "dialog/importoldpkdialog.h"
 
 #include <QDir>
 #include <QFileDialog>
@@ -19,8 +18,6 @@ ImportDialog::ImportDialog(QWidget *parent) :
     ui(new Ui::ImportDialog)
 {
     ui->setupUi(this);
-
-//    Hcash::getInstance()->appendCurrentDialogVector(this);
 
     setParent(CDC::getInstance()->mainFrame);
 
@@ -49,17 +46,10 @@ ImportDialog::ImportDialog(QWidget *parent) :
 ImportDialog::~ImportDialog()
 {
     delete ui;
-//    Hcash::getInstance()->removeCurrentDialogVector(this);
 }
 
 void ImportDialog::pop()
 {
-//    QEventLoop loop;
-//    show();
-//    ui->privateKeyLineEdit->grabKeyboard();
-//    connect(this,SIGNAL(accepted()),&loop,SLOT(quit()));
-//    loop.exec();  //进入事件 循环处理，阻塞
-
     move(0,0);
     exec();
 }
@@ -67,8 +57,6 @@ void ImportDialog::pop()
 void ImportDialog::on_cancelBtn_clicked()
 {
     close();
-//    qDebug() << "on_cancelBtn_clicked";
-//    emit accepted();
 }
 
 void ImportDialog::on_pathBtn_clicked()
@@ -156,21 +144,6 @@ void ImportDialog::on_importBtn_clicked()
                 commonDialog.pop();
                 return;
             }
-        }
-        else
-        {
-            return;
-        }
-
-    }
-    else if( ui->privateKeyLineEdit->text().endsWith(".dat") )      // 如果是旧钱包导出的私钥文件
-    {
-        ImportOldPkDialog importOldPkDialog;
-        if(importOldPkDialog.pop())
-        {
-
-
-
         }
         else
         {

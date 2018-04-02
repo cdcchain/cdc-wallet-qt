@@ -56,37 +56,6 @@ AssetPage::~AssetPage()
 
 void AssetPage::updateAssetInfo()
 {
-//    ui->assetInfoTableWidget->setRowCount(0);
-//    ui->assetInfoTableWidget->setRowCount(Hcash::getInstance()->assetInfoMap.size());
-//    foreach (int id, Hcash::getInstance()->assetInfoMap.keys())
-//    {
-//        ui->assetInfoTableWidget->setRowHeight(id,45);
-
-//        AssetInfo info = Hcash::getInstance()->assetInfoMap.value(id);
-
-//        ui->assetInfoTableWidget->setItem(id,0,new QTableWidgetItem(QString::number(id)));
-//        ui->assetInfoTableWidget->setItem(id,1,new QTableWidgetItem(info.symbol));
-
-//        if( id == 0)
-//        {
-//            ui->assetInfoTableWidget->setItem(id,2,new QTableWidgetItem(QString::fromLocal8Bit("系统")));
-//            ui->assetInfoTableWidget->setItem(id,4,new QTableWidgetItem("-"));
-//        }
-//        else
-//        {
-//            ui->assetInfoTableWidget->setItem(id,2,new QTableWidgetItem(info.owner));
-//            ui->assetInfoTableWidget->setItem(id,4,new QTableWidgetItem(QString::number(info.currentSupply * 100 / info.maxSupply,'g',16) + "%"));
-//        }
-
-//        ui->assetInfoTableWidget->setItem(id,3,new QTableWidgetItem(QString::number(info.maxSupply / info.precision,'g',16)));
-//        ui->assetInfoTableWidget->setItem(id,5,new QTableWidgetItem(info.description));
-
-//        for(int j = 0; j < 6; j++)
-//        {
-//            ui->assetInfoTableWidget->item(id,j)->setTextAlignment(Qt::AlignCenter);
-//        }
-
-//    }
 }
 
 void AssetPage::updateMyAsset()
@@ -115,7 +84,6 @@ void AssetPage::updateMyAsset()
         ui->myAssetWidget->setItem(myAssetCount,2,new QTableWidgetItem(info.contractAddress));
         ui->myAssetWidget->setItem(myAssetCount,3,new QTableWidgetItem(getBigNumberString(info.totalSupply,info.precision)));
         ui->myAssetWidget->setItem(myAssetCount,4,new QTableWidgetItem(getBigNumberString(info.precision,1)));
-//        ui->myAssetWidget->setItem(myAssetCount,5,new QTableWidgetItem(QString::fromLocal8Bit("取消关注")));
         ui->myAssetWidget->setItem(myAssetCount,5,new QTableWidgetItem(tr("unfollow")));
         ui->myAssetWidget->item(myAssetCount,5)->setTextColor(QColor(65,205,82));
 
@@ -142,7 +110,6 @@ void AssetPage::on_myAssetWidget_cellClicked(int row, int column)
         QString contractAddress = ui->myAssetWidget->item(row,2)->text();
 
         CommonDialog tipDialog(CommonDialog::YesOrNo);
-//        tipDialog.setText( QString::fromLocal8Bit("是否取消关注 ") + symbol + " ?");
         tipDialog.setText( tr("Sure to unfollow ") + symbol + " ?");
 
         if( tipDialog.pop() )

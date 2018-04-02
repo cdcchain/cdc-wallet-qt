@@ -30,7 +30,7 @@ WorkerThreadManager::~WorkerThreadManager()
     qDebug() << QThread::currentThreadId() << "~WorkerThreadManager()";
 }
 
-// 由Hcash rpcPosted 信号触发 排在事件队列
+// 由rpcPosted 信号触发 排在事件队列
 void WorkerThreadManager::processRPCs(QString cmd)
 {
     WorkerThread * worker;

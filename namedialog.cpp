@@ -13,7 +13,6 @@ NameDialog::NameDialog(QWidget *parent) :
     DLOG_QT_WALLET_FUNCTION_BEGIN;
     ui->setupUi(this);
 
-//    Hcash::getInstance()->appendCurrentDialogVector(this);
     setParent(CDC::getInstance()->mainFrame);
 
     setAttribute(Qt::WA_TranslucentBackground, true);
@@ -58,31 +57,23 @@ NameDialog::NameDialog(QWidget *parent) :
 NameDialog::~NameDialog()
 {
     delete ui;
-//    Hcash::getInstance()->removeCurrentDialogVector(this);
 }
 
 void NameDialog::on_okBtn_clicked()
 {
     yesOrNO = true;
     close();
-//    emit accepted();
 }
 
 void NameDialog::on_cancelBtn_clicked()
 {
     yesOrNO = false;
     close();
-//    emit accepted();
 }
 
 QString NameDialog::pop()
 {
     ui->nameLineEdit->grabKeyboard();
-
-//    QEventLoop loop;
-//    show();
-//    connect(this,SIGNAL(accepted()),&loop,SLOT(quit()));
-//    loop.exec();  //进入事件 循环处理，阻塞
 
     move(0,0);
     exec();

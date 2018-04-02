@@ -15,7 +15,6 @@ DeleteAccountDialog::DeleteAccountDialog(QString name , QWidget *parent) :
 {
     ui->setupUi(this);
 
-//    Hcash::getInstance()->appendCurrentDialogVector(this);
     setParent(CDC::getInstance()->mainFrame);
 
     setAttribute(Qt::WA_TranslucentBackground, true);
@@ -62,44 +61,6 @@ void DeleteAccountDialog::on_okBtn_clicked()
 
     CDC::getInstance()->postRPC( toJsonFormat( "id_wallet_check_passphrase", "wallet_check_passphrase", QStringList() << ui->pwdLineEdit->text()
                                                ));
-
-
-//    if( ui->pwdLineEdit->text().isEmpty()) return;
-
-//    QString str = "wallet_check_passphrase " + ui->pwdLineEdit->text() + "\n";
-//    Hcash::getInstance()->write( str);
-//    QString result = Hcash::getInstance()->read();
-
-//    if( result.mid(0,4) == "true")
-//    {
-
-//        Hcash::getInstance()->write( "wallet_account_delete " + accountName + "\n");
-//        QString result = Hcash::getInstance()->read();
-
-//        if( result.mid(0,4) == "true")
-//        {
-//            Hcash::getInstance()->deleteAccountInConfigFile( accountName);
-//            Hcash::getInstance()->addressMapRemove( accountName);
-//            Hcash::getInstance()->balanceMapRemove( accountName);
-//            Hcash::getInstance()->registerMapRemove( accountName);
-
-//        }
-
-//        yesOrNo = true;
-//        close();
-////        emit accepted();
-//    }
-//    else if( result.mid(0,5) == "false")
-//    {
-//        ui->tipLabel1->setPixmap(QPixmap(":/pic/pic2/wrong.png"));
-//        ui->tipLabel2->setText("<body><font style=\"font-size:12px\" color=#FF8880>" + tr("Wrong Password!") + "</font></body>" );
-//    }
-//    else if( result.mid(0,5) == "20015")
-//    {
-//        ui->tipLabel1->setPixmap(QPixmap(":/pic/pic2/wrong.png"));
-//        ui->tipLabel2->setText("<body><font style=\"font-size:12px\" color=#FF8880>" + tr("At least 8 letters!") + "</font></body>" );
-//    }
-
 }
 
 void DeleteAccountDialog::on_cancelBtn_clicked()
@@ -128,11 +89,6 @@ void DeleteAccountDialog::on_pwdLineEdit_textChanged(const QString &arg1)
 void DeleteAccountDialog::pop()
 {
     ui->pwdLineEdit->grabKeyboard();
-
-//    QEventLoop loop;
-//    show();
-//    connect(this,SIGNAL(accepted()),&loop,SLOT(quit()));
-//    loop.exec();  //进入事件 循环处理，阻塞
 
     move(0,0);
     exec();
