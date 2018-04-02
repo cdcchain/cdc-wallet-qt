@@ -230,7 +230,7 @@ font: 12px &quot;微软雅黑&quot;;}</string>
    </column>
    <column>
     <property name="text">
-     <string>余额/HSR</string>
+     <string>余额/CDC</string>
     </property>
     <property name="font">
      <font>

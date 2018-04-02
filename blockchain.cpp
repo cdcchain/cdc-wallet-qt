@@ -327,7 +327,7 @@ void CDC::getSystemEnvironmentPath()
     {
         if (str.startsWith("HOME="))
         {
-            walletConfigPath = str.mid(5) + "/Library/Application Support/HSRWallet_POW+POS";
+            walletConfigPath = str.mid(5) + "/Library/Application Support/CDCWallet";
             appDataPath = walletConfigPath + "/chaindata";
             qDebug() << "appDataPath:" << appDataPath;
             break;
@@ -339,7 +339,7 @@ void CDC::getSystemEnvironmentPath()
         if (str.startsWith("HOME="))
         {
             appDataPath = str.mid(5) + "/"ASSET_NAME;
-            walletConfigPath = str.mid(5) + "/HSRWallet_POW+POS";
+            walletConfigPath = str.mid(5) + "/CDCWallet";
             qDebug() << "appDataPath:" << appDataPath;
             break;
         }

@@ -213,7 +213,6 @@ void MainPage::updateAccountList()
             AssetBalanceMap map = CDC::getInstance()->accountBalanceMap.value(accountName);
             ui->accountTableWidget->setItem(rowNum,2,new QTableWidgetItem(getBigNumberString(map.value(assetIndex),info.precision)));
 
-    //        ui->accountTableWidget->setItem(rowNum,2,new QTableWidgetItem(Hcash::getInstance()->balanceMapValue(accountName).remove(ASSET_NAME)));
             ui->accountTableWidget->item(rowNum,0)->setTextAlignment(Qt::AlignCenter);
             ui->accountTableWidget->item(rowNum,1)->setTextAlignment(Qt::AlignCenter);
             ui->accountTableWidget->item(rowNum,2)->setTextAlignment(Qt::AlignCenter);
@@ -252,7 +251,6 @@ void MainPage::updateAccountList()
 
             ContractBalanceMap map = CDC::getInstance()->accountContractBalanceMap.value(CDC::getInstance()->addressMap.value(accountName).ownerAddress);
             ui->accountTableWidget->setItem(rowNum,2,new QTableWidgetItem(getBigNumberString(map.value(contractAddress),info.precision)));
-    //        ui->accountTableWidget->setItem(rowNum,2,new QTableWidgetItem(Hcash::getInstance()->balanceMapValue(accountName).remove(ASSET_NAME)));
             ui->accountTableWidget->item(rowNum,0)->setTextAlignment(Qt::AlignCenter);
             ui->accountTableWidget->item(rowNum,1)->setTextAlignment(Qt::AlignCenter);
             ui->accountTableWidget->item(rowNum,2)->setTextAlignment(Qt::AlignCenter);
@@ -630,7 +628,7 @@ void MainPage::withdrawSalary(QString name, QString salary)
 //        commonDialog.setText( tr("Sure to withdraw your salary?"));
 //        if( commonDialog.pop())
 //        {
-//            Hcash::getInstance()->postRPC( toJsonFormat( "id_wallet_delegate_withdraw_pay", "wallet_delegate_withdraw_pay",
+//            CDC::getInstance()->postRPC( toJsonFormat( "id_wallet_delegate_withdraw_pay", "wallet_delegate_withdraw_pay",
 //                                                          QStringList() << name <<  name << QString::number(amount) ));
 //        }
 //    }
