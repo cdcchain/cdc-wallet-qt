@@ -1,4 +1,9 @@
-﻿#ifndef DEBUG_H
+﻿// Copyright (c) 2017-2018 The CDC developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+
+#ifndef DEBUG_H
 #define DEBUG_H
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,4 +1,9 @@
-﻿#include "addcontactdialog.h"
+﻿// Copyright (c) 2017-2018 The CDC developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+
+#include "addcontactdialog.h"
 #include "ui_addcontactdialog.h"
 #include "blockchain.h"
 #include "rpcthread.h"
