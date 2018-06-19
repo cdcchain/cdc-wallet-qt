@@ -177,8 +177,7 @@ font: 12px &quot;微软雅黑&quot;;}</string>
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">QToolButton{color:rgb(125,85,40);border:1px solid rgb(125,85,40);border-radius:10px;}
-QToolButton:hover{color:rgb(185,150,85);}</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>添加资产</string>

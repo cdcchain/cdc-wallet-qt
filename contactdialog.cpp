@@ -8,6 +8,7 @@
 #include "blockchain.h"
 #include <QDebug>
 #include "debug_log.h"
+#include "pubic_define.h"
 
 ContactDialog::ContactDialog(QWidget *parent) :
     QDialog(parent),
@@ -93,8 +94,8 @@ void ContactDialog::on_contactsTableWidget_cellEntered(int row, int column)
     ui->contactsTableWidget->item(previousColorRow,1)->setTextColor(QColor(0,0,0));
     ui->contactsTableWidget->item(previousColorRow,1)->setBackgroundColor(QColor(255,255,255));
 
-    ui->contactsTableWidget->item(row,0)->setBackgroundColor(QColor(125,85,40));
+    ui->contactsTableWidget->item(row,0)->setBackgroundColor(QColor(BUTTON_COLOR));
     ui->contactsTableWidget->item(row,1)->setTextColor(QColor(255,255,255));
-    ui->contactsTableWidget->item(row,1)->setBackgroundColor(QColor(125,85,40));
+    ui->contactsTableWidget->item(row,1)->setBackgroundColor(QColor(BUTTON_COLOR));
     previousColorRow = row;
 }

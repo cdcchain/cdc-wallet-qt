@@ -5,7 +5,6 @@
 
 #include "bottombar.h"
 #include "ui_bottombar.h"
-#include "consoledialog.h"
 #include "blockchain.h"
 #include "debug_log.h"
 #include "commontip.h"

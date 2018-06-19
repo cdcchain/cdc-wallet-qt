@@ -37,7 +37,6 @@ SOURCES += main.cpp\
     bottombar.cpp \
     setdialog.cpp \
     lockpage.cpp \
-    consoledialog.cpp \
     titlebar.cpp \
     debug_log.cpp \
     contactdialog.cpp \
@@ -94,7 +93,6 @@ HEADERS  += firstlogin.h \
     bottombar.h \
     setdialog.h \
     lockpage.h \
-    consoledialog.h \
     debug_log.h \
     titlebar.h \
     contactdialog.h \
@@ -140,7 +138,8 @@ HEADERS  += firstlogin.h \
     AES/aes.h \
     AES/aesencryptor.h \
     dialog/importenterpwddialog.h \
-    blockchain.h
+    blockchain.h \
+    pubic_define.h
 
 FORMS    += firstlogin.ui \
     normallogin.ui \
@@ -150,7 +149,6 @@ FORMS    += firstlogin.ui \
     bottombar.ui \
     setdialog.ui \
     lockpage.ui \
-    consoledialog.ui \
     titlebar.ui \
     contactdialog.ui \
     waitingforsync.ui \

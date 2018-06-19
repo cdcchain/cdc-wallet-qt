@@ -107,9 +107,7 @@ QLabel{font: 12px &quot;微软雅黑&quot;;}</string>
     <font/>
    </property>
    <property name="styleSheet">
-    <string notr="true">QToolButton{background-color:rgb(125,85,40);color:#ffffff;border:none;border-radius:16px;}
-QToolButton:hover{background-color:rgb(185,150,85);}
-QToolButton:disabled{background-color:#cecece;}</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>清空</string>

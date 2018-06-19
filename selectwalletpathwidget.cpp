@@ -9,6 +9,7 @@
 #include "rpcthread.h"
 #include <QPainter>
 #include "commondialog.h"
+#include "pubic_define.h"
 
 #include <QFileDialog>
 #include <QDebug>
@@ -34,7 +35,8 @@ SelectWalletPathWidget::SelectWalletPathWidget(QWidget *parent) :
                               "QToolButton:hover{background-image:url(:/pic/pic2/minimize_hover.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
     ui->closeBtn->setStyleSheet("QToolButton{background-image:url(:/pic/pic2/close2.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}"
                                 "QToolButton:hover{background-image:url(:/pic/pic2/close_hover.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
-
+    ui->okBtn->setStyleSheet("color:white;border:1px solid rgb("STR_BUTTON_COLOR");border-radius:16px;background-color: rgb("STR_BUTTON_COLOR");");
+    ui->selectPathBtn->setStyleSheet("color:white;border:none;background-color: rgb("STR_BUTTON_COLOR");");
 
     getUpdateXml();
 }

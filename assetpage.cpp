@@ -5,7 +5,7 @@
 
 #include "assetpage.h"
 #include "ui_assetpage.h"
-
+#include "pubic_define.h"
 #include <QDebug>
 #include <QPainter>
 
@@ -50,6 +50,8 @@ AssetPage::AssetPage(QWidget *parent) :
     ui->myAssetWidget->setMouseTracking(true);
 
     ui->myAssetWidget->horizontalHeader()->setVisible(true);
+
+    ui->addTokenBtn->setStyleSheet("QToolButton{color:rgb("STR_BUTTON_COLOR");border:1px solid rgb("STR_BUTTON_COLOR");border-radius:10px;}QToolButton:hover{color:rgb("STR_BUTTON_COLOR");}");
 
 
 }

@@ -7,7 +7,7 @@
 #include "ui_consolewidget.h"
 #include "blockchain.h"
 #include "rpcthread.h"
-
+#include "pubic_define.h"
 #include <QTextCodec>
 #include <QPainter>
 #include <QKeyEvent>
@@ -35,6 +35,7 @@ ConsoleWidget::ConsoleWidget(QWidget *parent) :
 //    ui->consoleBrowser->setText(QString::fromLocal8Bit("<body><font color=red>警告： 已有骗子通过要求用户在此输入指令以盗取钱包。不要在没有完全理解命令规范时使用控制台。</font><p></p><p></p></body>"));
 
     ui->consoleBrowser->setText( "<body><font color=red>" + tr("Warning: Some fraud may ask the user to enter the instruction here to steal the coins. Do not use the console without fully understanding the commands' specification.") + "</font><p></p><p></p></body>" );
+    ui->clearBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:16px;}QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}QToolButton:disabled{background-color:#cecece;}");
 }
 
 ConsoleWidget::~ConsoleWidget()

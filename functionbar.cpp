@@ -8,11 +8,12 @@
 #include "blockchain.h"
 #include "commondialog.h"
 #include "debug_log.h"
+#include "pubic_define.h"
 
 #include <QPainter>
 #include <QDebug>
 
-#define FUNCTIONPAGE_BTN_SELECTED       "background-color: rgb(125,85,40);color: rgb(255, 255, 255);border:none;"   // #7d5528
+#define FUNCTIONPAGE_BTN_SELECTED       "background-color: rgb("STR_BUTTON_COLOR");color: rgb(255, 255, 255);border:none;"   // #7d5528
 #define FUNCTIONPAGE_BTN_UNSELECTED     "background-color: rgb(185,150,85);color: rgb(255, 255, 255);border:none;"
 
 FunctionBar::FunctionBar(QWidget *parent) :

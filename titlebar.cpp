@@ -10,7 +10,6 @@
 #include "debug_log.h"
 #include <QPainter>
 #include "setdialog.h"
-#include "consoledialog.h"
 #include "consolewidget.h"
 #include "blockchain.h"
 #include "rpcthread.h"
@@ -249,9 +248,6 @@ void TitleBar::onTimeOut()
 
 void TitleBar::on_consoleBtn_clicked()
 {
-//    ConsoleDialog consoleDialog;
-//    consoleDialog.pop();
-
     if( CDC::getInstance()->consoleWidget)
     {
         CDC::getInstance()->consoleWidget->show();

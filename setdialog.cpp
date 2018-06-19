@@ -14,12 +14,13 @@
 #include "debug_log.h"
 #include "rpcthread.h"
 #include "commondialog.h"
+#include "pubic_define.h"
 
 
-#define SETDIALOG_GENERALBTN_SELECTED_STYLE     "QToolButton{background-color:rgb(125,85,40);color:white;border:1px solid rgb(125,85,40);border-top-left-radius: 3px;border-bottom-left-radius: 3px;}"
-#define SETDIALOG_GENERALBTN_UNSELECTED_STYLE   "QToolButton{background-color:white;color:rgb(125,85,40);border:1px solid rgb(125,85,40);border-top-left-radius: 3px;border-bottom-left-radius: 3px;}"
-#define SETDIALOG_SAVEBTN_SELECTED_STYLE        "QToolButton{background-color:rgb(125,85,40);color:white;border:1px solid rgb(125,85,40);border-top-right-radius: 3px;border-bottom-right-radius: 3px;}"
-#define SETDIALOG_SAVEBTN_UNSELECTED_STYLE      "QToolButton{background-color:white;color:rgb(125,85,40);border:1px solid rgb(125,85,40);border-top-right-radius: 3px;border-bottom-right-radius: 3px;}"
+#define SETDIALOG_GENERALBTN_SELECTED_STYLE     "QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:white;border:1px solid rgb("STR_BUTTON_COLOR");border-top-left-radius: 3px;border-bottom-left-radius: 3px;}"
+#define SETDIALOG_GENERALBTN_UNSELECTED_STYLE   "QToolButton{background-color:white;color:rgb("STR_BUTTON_COLOR");border:1px solid rgb("STR_BUTTON_COLOR");border-top-left-radius: 3px;border-bottom-left-radius: 3px;}"
+#define SETDIALOG_SAVEBTN_SELECTED_STYLE        "QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:white;border:1px solid rgb("STR_BUTTON_COLOR");border-top-right-radius: 3px;border-bottom-right-radius: 3px;}"
+#define SETDIALOG_SAVEBTN_UNSELECTED_STYLE      "QToolButton{background-color:white;color:rgb("STR_BUTTON_COLOR");border:1px solid rgb("STR_BUTTON_COLOR");border-top-right-radius: 3px;border-bottom-right-radius: 3px;}"
 
 
 SetDialog::SetDialog(QWidget *parent) :

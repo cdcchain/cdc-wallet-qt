@@ -1,0 +1,7 @@
+#ifndef PUBIC_DEFINE_H
+#define PUBIC_DEFINE_H
+
+#define BUTTON_COLOR 22,191,175
+#define STR_BUTTON_COLOR "22,191,175"
+
+#endif // PUBIC_DEFINE_H
