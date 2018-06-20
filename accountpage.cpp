@@ -9,7 +9,9 @@
 #include <QDateTime>
 #include <QTextCodec>
 #include <QScrollBar>
-
+#include <string>
+#include <QClipboard>
+#include "pubic_define.h"
 #include "accountpage.h"
 #include "blockchain.h"
 #include "ui_accountpage.h"
@@ -20,8 +22,6 @@
 #include "control/remarkcellwidget.h"
 #include "control/qrcodedialog.h"
 
-#include <string>
-#include <QClipboard>
 
 AccountPage::AccountPage(QString name, QWidget *parent) :
     QWidget(parent),
@@ -257,7 +257,7 @@ void AccountPage::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
     painter.setPen(QPen(QColor(228,228,228),Qt::SolidLine));
-    painter.setBrush(QBrush(QColor(220,195,145),Qt::SolidPattern));
+    painter.setBrush(QBrush(QColor(MENU_BACKGROUND_COLOR),Qt::SolidPattern));
     painter.drawRect(-1,-1,858,68);
 }
 

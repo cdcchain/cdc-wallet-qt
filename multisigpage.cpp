@@ -5,7 +5,7 @@
 
 #include "multisigpage.h"
 #include "ui_multisigpage.h"
-
+#include "pubic_define.h"
 #include "blockchain.h"
 #include "rpcthread.h"
 
@@ -20,7 +20,7 @@ MultiSigPage::MultiSigPage(QWidget *parent) :
 
     setAutoFillBackground(true);
     QPalette palette;
-    palette.setColor(QPalette::Background, QColor(244,244,242));
+    palette.setColor(QPalette::Background, QColor(BACKGROUND_COLOR));
     setPalette(palette);
 
     connect( CDC::getInstance(), SIGNAL(jsonDataUpdated(QString)), this, SLOT(jsonDataUpdated(QString)));

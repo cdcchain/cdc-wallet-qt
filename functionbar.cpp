@@ -25,7 +25,7 @@ FunctionBar::FunctionBar(QWidget *parent) :
 
     setAutoFillBackground(true);
     QPalette palette;
-    palette.setColor(QPalette::Background, QColor(220,195,145));
+    palette.setColor(QPalette::Background, QColor(MENU_BACKGROUND_COLOR));
     setPalette(palette);
 
     ui->multiSigBtn->hide();        // 多重签名 TODOTOMORROW

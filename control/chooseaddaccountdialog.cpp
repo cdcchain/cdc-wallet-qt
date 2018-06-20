@@ -5,6 +5,7 @@
 
 #include "chooseaddaccountdialog.h"
 #include "ui_chooseaddaccountdialog.h"
+#include "pubic_define.h"
 
 #ifdef WIN32
 #include "Windows.h"
@@ -17,6 +18,8 @@ ChooseAddAccountDialog::ChooseAddAccountDialog(QWidget *parent) :
     ui->setupUi(this);
     setWindowFlags(Qt::Popup);
 
+    ui->newBtn->setStyleSheet("QPushButton{color:rgb("STR_BUTTON_COLOR");border:1px solid white;border-top-left-radius:10px;border-top-right-radius:10px;background-color: white}QPushButton:hover{color:white;border:1px solid  rgb("STR_BUTTON_COLOR");background-color: rgb("STR_BUTTON_COLOR");}");
+    ui->importBtn->setStyleSheet("QPushButton{color:rgb("STR_BUTTON_COLOR");border:1px solid white;border-bottom-left-radius:10px;border-bottom-right-radius:10px;background-color: white}QPushButton:hover{color:white;border:1px solid  rgb("STR_BUTTON_COLOR");background-color: rgb("STR_BUTTON_COLOR");}");
 }
 
 ChooseAddAccountDialog::~ChooseAddAccountDialog()

@@ -7,7 +7,7 @@
 #include "ui_addtokendialog.h"
 
 #include <QDebug>
-
+#include "pubic_define.h"
 #include "blockchain.h"
 #include "rpcthread.h"
 #include "../commondialog.h"
@@ -32,6 +32,9 @@ AddTokenDialog::AddTokenDialog(QWidget *parent) :
     ui->contractAddressLineEdit->setStyleSheet("color:black;border:1px solid #CCCCCC;border-radius:3px;");
     ui->contractAddressLineEdit->setTextMargins(8,0,0,0);
     ui->contractAddressLineEdit->setFocus();
+
+    ui->okBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:3px;}QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}");
+    ui->cancelBtn->setStyleSheet("QToolButton{background-color:#ffffff;color:#484848;border:1px solid rgb("STR_BUTTON_COLOR");border-radius:3px;}QToolButton:hover{color:rgb("STR_BUTTON_COLOR");}");
 
     connect( CDC::getInstance(), SIGNAL(jsonDataUpdated(QString)), this, SLOT(jsonDataUpdated(QString)));
 }

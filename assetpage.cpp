@@ -29,7 +29,7 @@ AssetPage::AssetPage(QWidget *parent) :
 
     setAutoFillBackground(true);
     QPalette palette;
-    palette.setColor(QPalette::Background, QColor(244,244,242));
+    palette.setColor(QPalette::Background, QColor(BACKGROUND_COLOR));
     setPalette(palette);
 
     connect( CDC::getInstance(), SIGNAL(jsonDataUpdated(QString)), this, SLOT(jsonDataUpdated(QString)));
@@ -141,7 +141,7 @@ void AssetPage::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
     painter.setPen(QPen(QColor(228,228,228),Qt::SolidLine));
-    painter.setBrush(QBrush(QColor(247,246,242),Qt::SolidPattern));
+    painter.setBrush(QBrush(QColor(TITLE_COLOR),Qt::SolidPattern));
     painter.drawRect(-1,-1,858,66);
 }
 

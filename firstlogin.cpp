@@ -17,6 +17,7 @@
 #include "debug_log.h"
 #include "rpcthread.h"
 #include "commondialog.h"
+#include "pubic_define.h"
 
 FirstLogin::FirstLogin(QWidget *parent) :
     QWidget(parent),
@@ -60,6 +61,7 @@ FirstLogin::FirstLogin(QWidget *parent) :
                               "QToolButton:hover{background-image:url(:/pic/pic2/minimize_hover.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
     ui->closeBtn->setStyleSheet("QToolButton{background-image:url(:/pic/pic2/close2.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}"
                                 "QToolButton:hover{background-image:url(:/pic/pic2/close_hover.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
+    ui->createBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:16px;}QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}QToolButton:disabled{background-color:#cecece;}");
 
     ui->correctLabel->setPixmap( QPixmap(":/pic/pic2/correct2.png"));
     ui->correctLabel2->setPixmap( QPixmap(":/pic/pic2/correct2.png"));

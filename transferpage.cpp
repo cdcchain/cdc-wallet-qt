@@ -21,6 +21,7 @@
 #include "commondialog.h"
 #include "transferconfirmdialog.h"
 #include "rpcthread.h"
+#include "pubic_define.h"
 
 TransferPage::TransferPage(QString name,QWidget *parent) :
     QWidget(parent),
@@ -37,7 +38,7 @@ TransferPage::TransferPage(QString name,QWidget *parent) :
 
     setAutoFillBackground(true);
     QPalette palette;
-    palette.setColor(QPalette::Background, QColor(244,244,242));
+    palette.setColor(QPalette::Background, QColor(BACKGROUND_COLOR));
     setPalette(palette);
 
 
@@ -133,6 +134,7 @@ TransferPage::TransferPage(QString name,QWidget *parent) :
                   "QComboBox::down-arrow {image: url(:/pic/pic2/comboBoxArrow.png);}"
                   );
 #endif
+    ui->sendBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:16px;}QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}QToolButton:disabled{background-color:#cecece;}");
 
     getContactsList();
     getAssets();
@@ -143,8 +145,6 @@ TransferPage::TransferPage(QString name,QWidget *parent) :
     }
 
     inited = true;
-
-	
 }
 
 TransferPage::~TransferPage()
@@ -255,7 +255,7 @@ void TransferPage::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
     painter.setPen(QPen(QColor(228,228,228),Qt::SolidLine));
-    painter.setBrush(QBrush(QColor(247,246,242),Qt::SolidPattern));
+    painter.setBrush(QBrush(QColor(TITLE_COLOR),Qt::SolidPattern));
     painter.drawRect(-1,-1,858,68);
 
 }

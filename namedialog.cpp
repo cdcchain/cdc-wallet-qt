@@ -8,6 +8,7 @@
 #include "debug_log.h"
 #include "blockchain.h"
 #include "rpcthread.h"
+#include "pubic_define.h"
 
 #include <QMovie>
 
@@ -38,11 +39,11 @@ NameDialog::NameDialog(QWidget *parent) :
     ui->nameLineEdit->setTextMargins(8,0,0,0);
     ui->nameLineEdit->setAttribute(Qt::WA_InputMethodEnabled, false);
 
-
     ui->okBtn->setText(tr("Ok"));
     ui->okBtn->setEnabled(false);
-
+    ui->okBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:3px;}QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}QToolButton:disabled{background-color:#cecece;}");
     ui->cancelBtn->setText(tr("Cancel"));
+    ui->cancelBtn->setStyleSheet("QToolButton{background-color:#ffffff;color:#484848;border:1px solid rgb("STR_BUTTON_COLOR");border-radius:3px;}QToolButton:hover{color:rgb("STR_BUTTON_COLOR");}");
 
     QRegExp regx("[a-z][a-z0-9]+$");
     QValidator *validator = new QRegExpValidator(regx, this);

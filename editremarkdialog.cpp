@@ -6,6 +6,7 @@
 #include "editremarkdialog.h"
 #include "ui_editremarkdialog.h"
 #include "blockchain.h"
+#include "pubic_define.h"
 
 EditRemarkDialog::EditRemarkDialog(QString remark, QWidget *parent) :
     QDialog(parent),
@@ -27,7 +28,7 @@ EditRemarkDialog::EditRemarkDialog(QString remark, QWidget *parent) :
     ui->remarkLineEdit->setText( remark);
     ui->remarkLineEdit->setStyleSheet("color:black;border:1px solid #CCCCCC;border-radius:3px;");
     ui->remarkLineEdit->setTextMargins(8,0,0,0);
-
+    ui->okBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:3px;}QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}");
     ui->remarkLineEdit->setFocus();
 }
 

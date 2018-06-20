@@ -28,8 +28,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton{color:rgb(22,191,175);border:1px solid white;border-top-left-radius:10px;border-top-right-radius:10px;background-color: white}
-QPushButton:hover{color:white;border:1px solid  rgb(22,191,175);background-color: rgb(22,191,175);}</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>新建账户</string>
@@ -45,8 +44,7 @@ QPushButton:hover{color:white;border:1px solid  rgb(22,191,175);background-color
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton{color:rgb(22,191,175);border:1px solid white;border-bottom-left-radius:10px;border-bottom-right-radius:10px;background-color: white}
-QPushButton:hover{color:white;border:1px solid  rgb(22,191,175);background-color: rgb(22,191,175);}</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>导入账户</string>

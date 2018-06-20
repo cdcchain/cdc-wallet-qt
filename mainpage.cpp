@@ -26,6 +26,7 @@
 #include "control/rightclickmenudialog.h"
 #include "control/chooseaddaccountdialog.h"
 #include "dialog/renamedialog.h"
+#include "pubic_define.h"
 
 MainPage::MainPage(QWidget *parent) :
     QWidget(parent),
@@ -43,7 +44,7 @@ MainPage::MainPage(QWidget *parent) :
 
     setAutoFillBackground(true);
     QPalette palette;
-    palette.setColor(QPalette::Background, QColor(244,244,242));
+    palette.setColor(QPalette::Background, QColor(BACKGROUND_COLOR));
     setPalette(palette);
 
     ui->accountTableWidget->installEventFilter(this);
@@ -58,7 +59,7 @@ MainPage::MainPage(QWidget *parent) :
     ui->accountTableWidget->horizontalHeader()->setVisible(true);
     ui->accountTableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 
-
+    ui->addAccountBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:16px;}QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}QToolButton:disabled{background-color:#cecece;}");
 
     ui->accountTableWidget->setColumnWidth(0,173);
     ui->accountTableWidget->setColumnWidth(1,424);
@@ -110,11 +111,11 @@ MainPage::MainPage(QWidget *parent) :
 
 MainPage::~MainPage()
 {
-	DLOG_QT_WALLET_FUNCTION_BEGIN;
+    DLOG_QT_WALLET_FUNCTION_BEGIN;
 
     delete ui;
 
-	DLOG_QT_WALLET_FUNCTION_END;
+    DLOG_QT_WALLET_FUNCTION_END;
 }
 
 QString toThousandFigure( int);
@@ -382,7 +383,7 @@ void MainPage::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
     painter.setPen(QPen(QColor(228,228,228),Qt::SolidLine));
-    painter.setBrush(QBrush(QColor(220,195,145),Qt::SolidPattern));
+    painter.setBrush(QBrush(QColor(TITLE_COLOR),Qt::SolidPattern));
     painter.drawRect(-1,-1,858,68);
 
 }

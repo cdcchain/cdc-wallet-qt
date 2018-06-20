@@ -9,6 +9,7 @@
 #include <QTextStream>
 #include <QDebug>
 #include "debug_log.h"
+#include "pubic_define.h"
 
 RemarkDialog::RemarkDialog(QString address, QWidget *parent) :
     QDialog(parent),
@@ -19,7 +20,6 @@ RemarkDialog::RemarkDialog(QString address, QWidget *parent) :
     ui->setupUi(this);
 
     setParent(CDC::getInstance()->mainFrame);
-
     setAttribute(Qt::WA_TranslucentBackground, true);
     setWindowFlags(Qt::FramelessWindowHint);
 
@@ -27,15 +27,12 @@ RemarkDialog::RemarkDialog(QString address, QWidget *parent) :
     ui->widget->setStyleSheet("#widget {background-color:rgba(10, 10, 10,100);}");
     ui->containerWidget->setObjectName("containerwidget");
     ui->containerWidget->setStyleSheet("#containerwidget{background-color: rgb(246, 246, 246);border:1px groove rgb(180,180,180);}");
-
-
-
     ui->okBtn->setText(tr("Ok"));
+    ui->okBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:3px;}QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}");
     ui->cancelBtn->setText(tr("Cancel"));
-
+    ui->cancelBtn->setStyleSheet("QToolButton{background-color:#ffffff;color:#484848;border:1px solid rgb("STR_BUTTON_COLOR");border-radius:3px;}QToolButton:hover{color:rgb("STR_BUTTON_COLOR");}");
     ui->remarkLineEdit->setStyleSheet("color:black;border:1px solid #CCCCCC;border-radius:3px;");
     ui->remarkLineEdit->setTextMargins(8,0,0,0);
-
     ui->remarkLineEdit->setFocus();
     DLOG_QT_WALLET_FUNCTION_END;
 }
