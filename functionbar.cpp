@@ -13,8 +13,47 @@
 #include <QPainter>
 #include <QDebug>
 
-#define FUNCTIONPAGE_BTN_SELECTED       "background-color: rgb("STR_BUTTON_COLOR");color: rgb(255, 255, 255);border:none;"   // #7d5528
-#define FUNCTIONPAGE_BTN_UNSELECTED     "background-color: rgb(185,150,85);color: rgb(255, 255, 255);border:none;"
+QString getBtnStyle(bool isSelected, int pageIdx)
+{
+    QString style;
+    QString icon;
+    switch (pageIdx)
+    {
+    case 1:
+        icon = "/pic/pic2/send.png";
+        break;
+    case 2:
+        icon = "/pic/pic2/send.png";
+        break;
+    case 3:
+        icon = "/pic/cplpic/transferIcon.png";
+        break;
+    case 4:
+        icon = "/pic/pic2/send.png";
+        break;
+    case 5:
+        icon = "/pic/pic2/send.png";
+        break;
+    }
+    if (isSelected)
+    {
+        style.append("background-color: rgb("STR_MENU_BACKGROUND_COLOR");color: rgb(")
+             .append(STR_BUTTON_COLOR");border:none;background-image: url(:")
+             .append(icon).append(");background-repeat: no-repeat;background-position: left;")
+             .append("background-attachment: fixed;background-clip: padding;border-style: flat;")
+             .append("margin:0px 0px 0px 10px;padding:0px 20px 0px 0px;");
+    }
+    else
+    {
+        style.append("background-color: rgb("STR_MENU_BACKGROUND_COLOR");color: rgb(255, 255, 255);")
+             .append("border:none;background-image: url(:").append(icon)
+             .append(");background-repeat: no-repeat;background-position: left;")
+             .append("background-attachment: fixed;background-clip: padding;border-style: flat;")
+             .append("margin:0px 0px 0px 10px;padding:0px 20px 0px 0px;");
+    }
+    return style;
+}
+
 
 FunctionBar::FunctionBar(QWidget *parent) :
     QWidget(parent),
@@ -30,19 +69,7 @@ FunctionBar::FunctionBar(QWidget *parent) :
 
     ui->multiSigBtn->hide();        // 多重签名 TODOTOMORROW
     ui->contactBtn->move(0,173);
-
-//    ui->accountBtn->setIconSize(QSize(103,94));
-//    ui->assetBtn->setIconSize(QSize(103,94));
-//    ui->transferBtn->setIconSize(QSize(103,94));
-////    ui->marketBtn->setIconSize(QSize(103,94));
-//    ui->contactBtn->setIconSize(QSize(103,94));
-
-//    ui->accountBtn->setStyleSheet("background:transparent;border:none;");
-//    ui->assetBtn->setStyleSheet("background:transparent;border:none;");
-//    ui->transferBtn->setStyleSheet("background:transparent;border:none;");
-////    ui->marketBtn->setStyleSheet("background:transparent;border:none;");
-//    ui->contactBtn->setStyleSheet("background:transparent;border:none;");
-
+    ui->transferBtn->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
 
     choosePage(1);
 
@@ -80,7 +107,6 @@ void FunctionBar::on_transferBtn_clicked()
     {
         CommonDialog commonDialog(CommonDialog::OkOnly);
         commonDialog.setText(tr("No account for transfering,\nadd an account first"));
-//        commonDialog.move( this->mapToGlobal(QPoint(318,150)));
         commonDialog.pop();
         on_accountBtn_clicked();
     }
@@ -109,93 +135,43 @@ void FunctionBar::choosePage(int pageIndex)
 
     switch (pageIndex) {
     case 1:
-//        ui->accountBtn->setIcon(QIcon(":/pic/cplpic/accountBtn.png"));
-
-//        ui->assetBtn->setIcon(QIcon(":/pic/cplpic/assetBtn_unselected.png"));
-
-//        ui->transferBtn->setIcon(QIcon(":/pic/cplpic/transferBtn_unselected.png"));
-
-////        ui->marketBtn->setIcon(QIcon(":/pic/cplpic/marketBtn_unselected.png"));
-
-//        ui->contactBtn->setIcon(QIcon(":/pic/cplpic/contactBtn_unselected.png"));
-
-        ui->accountBtn->setStyleSheet(FUNCTIONPAGE_BTN_SELECTED);
-        ui->assetBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
-        ui->transferBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
-        ui->multiSigBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
-        ui->contactBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
+        ui->accountBtn->setStyleSheet(getBtnStyle(true, 1));
+        ui->assetBtn->setStyleSheet(getBtnStyle(false, 2));
+        ui->transferBtn->setStyleSheet(getBtnStyle(false, 3));
+        ui->multiSigBtn->setStyleSheet(getBtnStyle(false, 4));
+        ui->contactBtn->setStyleSheet(getBtnStyle(false, 5));
 
         break;
     case 2:
-//        ui->accountBtn->setIcon(QIcon(":/pic/cplpic/accountBtn_unselected.png"));
-
-//        ui->assetBtn->setIcon(QIcon(":/pic/cplpic/assetBtn.png"));
-
-//        ui->transferBtn->setIcon(QIcon(":/pic/cplpic/transferBtn_unselected.png"));
-
-////        ui->marketBtn->setIcon(QIcon(":/pic/cplpic/marketBtn_unselected.png"));
-
-//        ui->contactBtn->setIcon(QIcon(":/pic/cplpic/contactBtn_unselected.png"));
-
-        ui->accountBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
-        ui->assetBtn->setStyleSheet(FUNCTIONPAGE_BTN_SELECTED);
-        ui->transferBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
-        ui->multiSigBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
-        ui->contactBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
+        ui->accountBtn->setStyleSheet(getBtnStyle(false, 1));
+        ui->assetBtn->setStyleSheet(getBtnStyle(true, 2));
+        ui->transferBtn->setStyleSheet(getBtnStyle(false, 3));
+        ui->multiSigBtn->setStyleSheet(getBtnStyle(false, 4));
+        ui->contactBtn->setStyleSheet(getBtnStyle(false, 5));
 
         break;
     case 3:
-//        ui->accountBtn->setIcon(QIcon(":/pic/cplpic/accountBtn_unselected.png"));
-
-//        ui->assetBtn->setIcon(QIcon(":/pic/cplpic/assetBtn_unselected.png"));
-
-//        ui->transferBtn->setIcon(QIcon(":/pic/cplpic/transferBtn.png"));
-
-////        ui->marketBtn->setIcon(QIcon(":/pic/cplpic/marketBtn_unselected.png"));
-
-//        ui->contactBtn->setIcon(QIcon(":/pic/cplpic/contactBtn_unselected.png"));
-
-        ui->accountBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
-        ui->assetBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
-        ui->transferBtn->setStyleSheet(FUNCTIONPAGE_BTN_SELECTED);
-        ui->multiSigBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
-        ui->contactBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
+        ui->accountBtn->setStyleSheet(getBtnStyle(false, 1));
+        ui->assetBtn->setStyleSheet(getBtnStyle(false, 2));
+        ui->transferBtn->setStyleSheet(getBtnStyle(true, 3));
+        ui->multiSigBtn->setStyleSheet(getBtnStyle(false, 4));
+        ui->contactBtn->setStyleSheet(getBtnStyle(false, 5));
 
         break;
     case 4:
-//        ui->accountBtn->setIcon(QIcon(":/pic/cplpic/accountBtn_unselected.png"));
-
-//        ui->assetBtn->setIcon(QIcon(":/pic/cplpic/assetBtn_unselected.png"));
-
-//        ui->transferBtn->setIcon(QIcon(":/pic/cplpic/transferBtn_unselected.png"));
-
-////        ui->marketBtn->setIcon(QIcon(":/pic/cplpic/marketBtn.png"));
-
-//        ui->contactBtn->setIcon(QIcon(":/pic/cplpic/contactBtn_unselected.png"));
-
-        ui->accountBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
-        ui->assetBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
-        ui->transferBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
-        ui->multiSigBtn->setStyleSheet(FUNCTIONPAGE_BTN_SELECTED);
-        ui->contactBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
+        ui->accountBtn->setStyleSheet(getBtnStyle(false, 1));
+        ui->assetBtn->setStyleSheet(getBtnStyle(false, 2));
+        ui->transferBtn->setStyleSheet(getBtnStyle(false, 3));
+        ui->multiSigBtn->setStyleSheet(getBtnStyle(true, 4));
+        ui->contactBtn->setStyleSheet(getBtnStyle(false, 5));
 
         break;
     case 5:
-//        ui->accountBtn->setIcon(QIcon(":/pic/cplpic/accountBtn_unselected.png"));
-
-//        ui->assetBtn->setIcon(QIcon(":/pic/cplpic/assetBtn_unselected.png"));
-
-//        ui->transferBtn->setIcon(QIcon(":/pic/cplpic/transferBtn_unselected.png"));
-
-////        ui->marketBtn->setIcon(QIcon(":/pic/cplpic/marketBtn_unselected.png"));
-
-//        ui->contactBtn->setIcon(QIcon(":/pic/cplpic/contactBtn.png"));
-
-        ui->accountBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
-        ui->assetBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
-        ui->transferBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
-        ui->multiSigBtn->setStyleSheet(FUNCTIONPAGE_BTN_UNSELECTED);
-        ui->contactBtn->setStyleSheet(FUNCTIONPAGE_BTN_SELECTED);
+        ui->accountBtn->setStyleSheet(getBtnStyle(false, 1));
+        ui->assetBtn->setStyleSheet(getBtnStyle(false, 2));
+        ui->transferBtn->setStyleSheet(getBtnStyle(false, 3));
+        ui->multiSigBtn->setStyleSheet(getBtnStyle(false, 4));
+        ui->contactBtn->setStyleSheet(getBtnStyle(true, 5));
 
         break;
     default:

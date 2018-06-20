@@ -52,6 +52,7 @@
         <file>cplpic/refresh2.png</file>
         <file>pic2/qrcode.png</file>
         <file>cplpic/logo.png</file>
+        <file>cplpic/transferIcon.png</file>
     </qresource>
     <qresource prefix="/language">
         <file>wallet_English.qm</file>
