@@ -28,10 +28,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QTableWidget{border: 1px solid rgb(241,241,248);gridline-color: rgb(241,241,248)}
-QHeaderView{background-color:white;min-height:47;}
-QHeaderView::section{background-color: white;border: 1px solid rgb(241,241,248);
-font: 12px &quot;微软雅黑&quot;;}</string>
+    <string notr="true"/>
    </property>
    <property name="verticalScrollBarPolicy">
     <enum>Qt::ScrollBarAsNeeded</enum>

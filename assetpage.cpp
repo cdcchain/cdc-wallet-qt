@@ -3,12 +3,12 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 
-#include "assetpage.h"
-#include "ui_assetpage.h"
-#include "pubic_define.h"
 #include <QDebug>
 #include <QPainter>
 
+#include "assetpage.h"
+#include "ui_assetpage.h"
+#include "pubic_define.h"
 #include "blockchain.h"
 #include "dialog/assetissuedialog.h"
 #include "commondialog.h"
@@ -50,10 +50,11 @@ AssetPage::AssetPage(QWidget *parent) :
     ui->myAssetWidget->setMouseTracking(true);
 
     ui->myAssetWidget->horizontalHeader()->setVisible(true);
+    QTableWidgetItem *columnHeaderItem = ui->myAssetWidget->horizontalHeaderItem(1);
+    columnHeaderItem->setBackgroundColor(QColor(MENU_BACKGROUND_COLOR));
+    columnHeaderItem->setTextColor(QColor(200,111,30));
 
     ui->addTokenBtn->setStyleSheet("QToolButton{color:rgb("STR_BUTTON_COLOR");border:1px solid rgb("STR_BUTTON_COLOR");border-radius:10px;}QToolButton:hover{color:rgb("STR_BUTTON_COLOR");}");
-
-
 }
 
 AssetPage::~AssetPage()

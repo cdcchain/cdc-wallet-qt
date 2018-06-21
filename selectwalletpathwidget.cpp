@@ -24,19 +24,25 @@ SelectWalletPathWidget::SelectWalletPathWidget(QWidget *parent) :
     ui->setupUi(this);
 
     setAutoFillBackground(true);
-    QPalette palette;
-    palette.setBrush(QPalette::Background, QBrush(QPixmap(":/pic/cplpic/bg.png")));
+    QPalette palette(this->palette());
+    palette.setColor(QPalette::Background, QColor(MENU_BACKGROUND_COLOR));
     setPalette(palette);
 
     ui->pathLineEdit->setText( CDC::getInstance()->appDataPath);
-    ui->pathLineEdit->setStyleSheet("color:white;background:transparent;border-width:0;border-style:outset;");
+    ui->pathLineEdit->setStyleSheet("color:white;border-color:white;background:transparent;border-width:0px 0px 1px 0px;border-style:outset;");
 
-    ui->minBtn->setStyleSheet("QToolButton{background-image:url(:/pic/pic2/minimize2.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}"
-                              "QToolButton:hover{background-image:url(:/pic/pic2/minimize_hover.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
-    ui->closeBtn->setStyleSheet("QToolButton{background-image:url(:/pic/pic2/close2.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}"
-                                "QToolButton:hover{background-image:url(:/pic/pic2/close_hover.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
-    ui->okBtn->setStyleSheet("color:white;border:1px solid rgb("STR_BUTTON_COLOR");border-radius:16px;background-color: rgb("STR_BUTTON_COLOR");");
-    ui->selectPathBtn->setStyleSheet("color:white;border:none;background-color: rgb("STR_BUTTON_COLOR");");
+    ui->minBtn->setStyleSheet("QToolButton{background-image:url(:/pic/cplpic/min.png);background-repeat: no-repeat;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
+    ui->closeBtn->setStyleSheet("QToolButton{background-image:url(:/pic/cplpic/close.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
+    ui->okBtn->setStyleSheet("color:white;border:1px solid rgb("STR_BUTTON_COLOR");background-color:rgb("STR_BUTTON_COLOR");");
+//    ui->selectPathBtn->setStyleSheet("color:white;border-style:outset;border-color:white;border-width:2px;background-color:rgb("STR_MENU_BACKGROUND_COLOR");");
+    this->setStyleSheet("QPushButton {color:white;border-style:outset;border-color:white;border-width:1px;background-color:rgb("
+                        STR_MENU_BACKGROUND_COLOR");}");
+    ui->titleBg->setStyleSheet("background-image: url(:/pic/cplpic/titleBg.png);");
+    ui->titleBg->setGeometry(0,0,960,76);
+    ui->logo->setStyleSheet("background-image: url(:/pic/cplpic/logo.png);");
+    ui->logo->setGeometry(14,14,102,48);
+    ui->version->setStyleSheet("color: white;");
+    ui->walletIcon->setStyleSheet("background-image: url(:/pic/cplpic/walletIcon.png);background-repeat: no-repeat;");
 
     getUpdateXml();
 }
@@ -84,13 +90,14 @@ void SelectWalletPathWidget::on_okBtn_clicked()
 
 void SelectWalletPathWidget::paintEvent(QPaintEvent *)
 {
-    QPainter painter(this);
+    /*QPainter painter(this);
     QPen pen;
     pen.setColor(Qt::white);
     pen.setStyle(Qt::SolidLine);
     pen.setWidth(1);
     painter.setPen(pen);
     painter.drawLine(QPoint(348,290),QPoint(575,290));
+    */
 }
 
 void SelectWalletPathWidget::on_minBtn_clicked()

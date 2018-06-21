@@ -5,7 +5,7 @@
 
 #include "shadowwidget.h"
 #include "ui_shadowwidget.h"
-
+#include "pubic_define.h"
 #include <QDebug>
 #include <QMovie>
 
@@ -18,17 +18,12 @@ ShadowWidget::ShadowWidget(QWidget *parent) :
     setWindowFlags(Qt::FramelessWindowHint);
 
     setAutoFillBackground(true);
-    QPalette palette;
-    palette.setColor(QPalette::Background, QColor(10,10,10,100));
+    QPalette palette(this->palette());
+    palette.setColor(QPalette::Background, QColor(MENU_BACKGROUND_COLOR));
     setPalette(palette);
 
     ui->gifLabel->setGeometry(0,0,34,34);
     ui->gifLabel->show();
-
-    gif = new QMovie(":/pic/pic2/loading2.gif");
-    gif->setScaledSize( QSize(34,34));
-    ui->gifLabel->setMovie(gif);
-    gif->start();
 
     retranslator();
 

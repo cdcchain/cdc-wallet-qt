@@ -28,12 +28,12 @@ FirstLogin::FirstLogin(QWidget *parent) :
     connect(CDC::getInstance(),SIGNAL(jsonDataUpdated(QString)),this,SLOT(jsonDataUpdated(QString)));
 
     setAutoFillBackground(true);
-    QPalette palette;
-    palette.setBrush(QPalette::Background, QBrush(QPixmap(":/pic/cplpic/bg.png")));
+    QPalette palette(this->palette());
+    palette.setColor(QPalette::Background, QColor(MENU_BACKGROUND_COLOR));
     setPalette(palette);
 
-    ui->pwdLineEdit->setStyleSheet("color:white;background:transparent;border-width:0;border-style:outset;");
-    ui->pwdLineEdit2->setStyleSheet("color:white;background:transparent;border-width:0;border-style:outset;");
+    ui->pwdLineEdit->setStyleSheet("color:white;background:transparent;border-color:white;border-width:0px 0px 1px 0px;border-style:outset;");
+    ui->pwdLineEdit2->setStyleSheet("color:white;background:transparent;border-color:white;border-width:0px 0px 1px 0px;border-style:outset;");
     ui->pwdLineEdit->setMaxLength(14);
     ui->pwdLineEdit2->setMaxLength(14);
 #ifdef TARGET_OS_MAC
@@ -57,10 +57,8 @@ FirstLogin::FirstLogin(QWidget *parent) :
     font.setPixelSize(12);
     ui->tipLabel->setFont(font);
 
-    ui->minBtn->setStyleSheet("QToolButton{background-image:url(:/pic/pic2/minimize2.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}"
-                              "QToolButton:hover{background-image:url(:/pic/pic2/minimize_hover.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
-    ui->closeBtn->setStyleSheet("QToolButton{background-image:url(:/pic/pic2/close2.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}"
-                                "QToolButton:hover{background-image:url(:/pic/pic2/close_hover.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
+    ui->minBtn->setStyleSheet("QToolButton{background-image:url(:/pic/cplpic/min.png);background-repeat: no-repeat;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
+    ui->closeBtn->setStyleSheet("QToolButton{background-image:url(:/pic/cplpic/close.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
     ui->createBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:16px;}QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}QToolButton:disabled{background-color:#cecece;}");
 
     ui->correctLabel->setPixmap( QPixmap(":/pic/pic2/correct2.png"));
@@ -68,8 +66,12 @@ FirstLogin::FirstLogin(QWidget *parent) :
     ui->correctLabel->hide();
     ui->correctLabel2->hide();
 
-//    ui->tipLabel2->setPixmap(QPixmap(":/pic/pic2/pwdTip.png"));
-//    ui->tipLabel2->setGeometry(602,148,319,124);
+    ui->titleBg->setStyleSheet("background-image: url(:/pic/cplpic/titleBg.png);");
+    ui->titleBg->setGeometry(0,0,960,76);
+    ui->logo->setStyleSheet("background-image: url(:/pic/cplpic/logo.png);");
+    ui->logo->setGeometry(14,14,102,48);
+    ui->version->setStyleSheet("color: white;");
+    ui->walletIcon->setStyleSheet("background-image: url(:/pic/cplpic/walletIcon.png);background-repeat: no-repeat;");
 
 #ifdef WIN32
     if( GetKeyState(VK_CAPITAL) )
@@ -107,12 +109,6 @@ void FirstLogin::on_createBtn_clicked()
         ui->pwdLineEdit->setEnabled(false);
         ui->pwdLineEdit2->setEnabled(false);
 
-//        RpcThread* rpcThread = new RpcThread;
-//        connect(rpcThread,SIGNAL(finished()),rpcThread,SLOT(deleteLater()));
-//        rpcThread->setLogin("a","b");
-//        rpcThread->setWriteData( toJsonFormat( "id_create", "create", QStringList() << "wallet" << ui->pwdLineEdit->text() ));
-//        rpcThread->start();
-
         CDC::getInstance()->postRPC( toJsonFormat( "id_create", "create", QStringList() << "wallet" << ui->pwdLineEdit->text() ));
     }
     else
@@ -126,15 +122,6 @@ void FirstLogin::on_createBtn_clicked()
 
 void FirstLogin::paintEvent(QPaintEvent *)
 {
-    QPainter painter(this);
-    QPen pen;
-    pen.setColor(QColor(137,176,226));
-    pen.setStyle(Qt::SolidLine);
-    pen.setWidth(1);
-    painter.setPen(pen);
-    painter.drawLine(QPoint(367,217),QPoint(595,217));
-    painter.drawLine(QPoint(367,289),QPoint(595,289));
-
 }
 
 

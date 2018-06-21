@@ -21,10 +21,10 @@
   <widget class="QPushButton" name="selectPathBtn">
    <property name="geometry">
     <rect>
-     <x>585</x>
-     <y>262</y>
-     <width>80</width>
-     <height>25</height>
+     <x>540</x>
+     <y>250</y>
+     <width>126</width>
+     <height>39</height>
     </rect>
    </property>
    <property name="font">
@@ -45,7 +45,7 @@
   <widget class="QLineEdit" name="pathLineEdit">
    <property name="geometry">
     <rect>
-     <x>348</x>
+     <x>300</x>
      <y>260</y>
      <width>227</width>
      <height>29</height>
@@ -63,15 +63,16 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>348</x>
-     <y>240</y>
+     <x>300</x>
+     <y>220</y>
      <width>231</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>微软雅黑</family>
+     <pointsize>11</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -84,10 +85,10 @@
   <widget class="QToolButton" name="okBtn">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>322</y>
-     <width>140</width>
-     <height>33</height>
+     <x>300</x>
+     <y>320</y>
+     <width>125</width>
+     <height>49</height>
     </rect>
    </property>
    <property name="font">
@@ -109,7 +110,7 @@
    <property name="geometry">
     <rect>
      <x>938</x>
-     <y>10</y>
+     <y>80</y>
      <width>14</width>
      <height>14</height>
     </rect>
@@ -128,7 +129,7 @@
    <property name="geometry">
     <rect>
      <x>916</x>
-     <y>10</y>
+     <y>80</y>
      <width>14</width>
      <height>14</height>
     </rect>
@@ -138,6 +139,58 @@
    </property>
    <property name="focusPolicy">
     <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="titleBg">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>10</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="logo">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>10</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="version">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>20</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Wallet V0.1.1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="walletIcon">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>40</y>
+     <width>31</width>
+     <height>31</height>
+    </rect>
    </property>
    <property name="text">
     <string/>

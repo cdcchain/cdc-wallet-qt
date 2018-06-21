@@ -27,32 +27,29 @@
         <file>cplpic/network.png</file>
         <file>cplpic/addContactBtn.png</file>
         <file>cplpic/checkBox_checked.png</file>
-        <file>cplpic/accountBtn.png</file>
-        <file>cplpic/accountBtn_unselected.png</file>
-        <file>cplpic/contactBtn.png</file>
-        <file>cplpic/contactBtn_unselected.png</file>
-        <file>cplpic/transferBtn.png</file>
-        <file>cplpic/transferBtn_unselected.png</file>
         <file>cplpic/copy.png</file>
         <file>cplpic/refresh.gif</file>
         <file>cplpic/refresh.png</file>
-        <file>cplpic/assetBtn.png</file>
-        <file>cplpic/assetBtn_unselected.png</file>
-        <file>cplpic/marketBtn.png</file>
-        <file>cplpic/marketBtn_unselected.png</file>
         <file>cplpic/info.png</file>
-        <file>cplpic/bg.png</file>
         <file>cplpic/titleBg2.png</file>
-        <file>cplpic/titleBg3.png</file>
         <file>cplpic/titleBg.png</file>
         <file>pic2/contactBtn2_En.png</file>
         <file>pic2/contactBtn2_hover_En.png</file>
         <file>pic2/send.png</file>
-        <file>cplpic/refresh2.gif</file>
-        <file>cplpic/refresh2.png</file>
         <file>pic2/qrcode.png</file>
         <file>cplpic/logo.png</file>
         <file>cplpic/transferIcon.png</file>
+        <file>cplpic/accountIcon.png</file>
+        <file>cplpic/accountIcon2.png</file>
+        <file>cplpic/assetIcon.png</file>
+        <file>cplpic/assetIcon2.png</file>
+        <file>cplpic/close.png</file>
+        <file>cplpic/contactIcon.png</file>
+        <file>cplpic/contactIcon2.png</file>
+        <file>cplpic/min.png</file>
+        <file>cplpic/transferIcon2.png</file>
+        <file>cplpic/logo2.png</file>
+        <file>cplpic/walletIcon.png</file>
     </qresource>
     <qresource prefix="/language">
         <file>wallet_English.qm</file>

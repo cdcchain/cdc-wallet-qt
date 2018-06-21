@@ -211,11 +211,11 @@ Frame::Frame(): timer(NULL),
     mutexForConfigFile.unlock();
 
 
-    this->setWindowIcon(QIcon(":/pic/cplpic/logo.png"));
+    this->setWindowIcon(QIcon(":/pic/cplpic/logo2.png"));
     trayIcon = new QSystemTrayIcon(this);
     //放在托盘提示信息、托盘图标
     trayIcon ->setToolTip(QString(ASSET_NAME"Wallet ") + WALLET_VERSION);
-    trayIcon ->setIcon(QIcon(":/pic/cplpic/logo.png"));
+    trayIcon ->setIcon(QIcon(":/pic/cplpic/logo2.png"));
     //点击托盘执行的事件
     connect(trayIcon , SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
                 this, SLOT(iconIsActived(QSystemTrayIcon::ActivationReason)));
