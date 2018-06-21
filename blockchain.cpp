@@ -1110,16 +1110,9 @@ QString getBigNumberString(unsigned long long number, unsigned long long precisi
 
 bool checkAddress(QString address)
 {
-    if( address.size() == 33 || address.size() == 34)
+    if( address.size() == 42 && address.startsWith("0x"))
     {
-        if( address.startsWith("G"))
-        {
             return true;
-        }
-        else
-        {
-            return false;
-        }
     }
     else
     {

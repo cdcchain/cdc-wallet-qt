@@ -284,7 +284,7 @@ void Frame::alreadyLogin()
     DLOG_QT_WALLET_FUNCTION_BEGIN;
 
     titleBar = new TitleBar(this);
-    titleBar->setGeometry(0,0,960,53);
+    titleBar->setGeometry(0,0,960,76);
     connect(titleBar,SIGNAL(minimum()),this,SLOT(showMinimized()));
     connect(titleBar,SIGNAL(closeWallet()),qApp,SLOT(quit()));
     connect(titleBar,SIGNAL(tray()),this,SLOT(hide()));
@@ -298,11 +298,11 @@ void Frame::alreadyLogin()
     titleBar->show();
 
     centralWidget = new QWidget(this);
-    centralWidget->setGeometry(103,53,857,529);
+    centralWidget->setGeometry(126,76,857,529);
     centralWidget->show();
 
     bottomBar = new BottomBar(this);
-    bottomBar->move(103,540);
+    bottomBar->move(102,540);
     bottomBar->show();
 
 //    showBottomBarWidget = new ShowBottomBarWidget(centralWidget);
@@ -311,7 +311,7 @@ void Frame::alreadyLogin()
 //    showBottomBarWidget->show();
 
     functionBar = new FunctionBar(this);
-    functionBar->move(0,53);
+    functionBar->setGeometry(0,76,126,540);
     functionBar->show();
     connect(functionBar, SIGNAL(showMainPage()), this, SLOT( showMainPage()));
     connect(functionBar, SIGNAL(showAssetPage()), this, SLOT( showAssetPage()));

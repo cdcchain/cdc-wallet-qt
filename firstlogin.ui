@@ -70,14 +70,16 @@
    <property name="font">
     <font>
      <family>微软雅黑</family>
-     <pointsize>10</pointsize>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
-    <string>设置您的登录密码：</string>
+    <string>请设置您的登录密码：</string>
    </property>
   </widget>
   <widget class="QLabel" name="pwdLabel2">
@@ -92,28 +94,32 @@
    <property name="font">
     <font>
      <family>微软雅黑</family>
-     <pointsize>10</pointsize>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
-    <string>再输一次：</string>
+    <string>请再输入一次：</string>
    </property>
   </widget>
   <widget class="QToolButton" name="createBtn">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>320</y>
-     <width>140</width>
-     <height>33</height>
+     <x>330</x>
+     <y>330</y>
+     <width>125</width>
+     <height>49</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>微软雅黑</family>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="cursor">

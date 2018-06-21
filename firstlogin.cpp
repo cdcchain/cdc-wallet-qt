@@ -59,7 +59,7 @@ FirstLogin::FirstLogin(QWidget *parent) :
 
     ui->minBtn->setStyleSheet("QToolButton{background-image:url(:/pic/cplpic/min.png);background-repeat: no-repeat;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
     ui->closeBtn->setStyleSheet("QToolButton{background-image:url(:/pic/cplpic/close.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
-    ui->createBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:16px;}QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}QToolButton:disabled{background-color:#cecece;}");
+    ui->createBtn->setStyleSheet("color:white;border:1px solid rgb("STR_BUTTON_COLOR");background-color:rgb("STR_BUTTON_COLOR");");
 
     ui->correctLabel->setPixmap( QPixmap(":/pic/pic2/correct2.png"));
     ui->correctLabel2->setPixmap( QPixmap(":/pic/pic2/correct2.png"));

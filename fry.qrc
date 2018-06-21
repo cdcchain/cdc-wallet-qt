@@ -50,6 +50,8 @@
         <file>cplpic/transferIcon2.png</file>
         <file>cplpic/logo2.png</file>
         <file>cplpic/walletIcon.png</file>
+        <file>cplpic/lockIcon.png</file>
+        <file>cplpic/settingsIcon.png</file>
     </qresource>
     <qresource prefix="/language">
         <file>wallet_English.qm</file>

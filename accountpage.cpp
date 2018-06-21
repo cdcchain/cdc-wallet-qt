@@ -37,7 +37,7 @@ AccountPage::AccountPage(QString name, QWidget *parent) :
 
     setAutoFillBackground(true);
     QPalette palette;
-    palette.setColor(QPalette::Background, QColor(255,255,255));
+    palette.setColor(QPalette::Background, QColor(TITLE_COLOR));
     setPalette(palette);
 
     connect( CDC::getInstance(), SIGNAL(jsonDataUpdated(QString)), this, SLOT(jsonDataUpdated(QString)));
@@ -255,10 +255,10 @@ void AccountPage::on_copyBtn_clicked()
 
 void AccountPage::paintEvent(QPaintEvent *)
 {
-    QPainter painter(this);
-    painter.setPen(QPen(QColor(228,228,228),Qt::SolidLine));
-    painter.setBrush(QBrush(QColor(MENU_BACKGROUND_COLOR),Qt::SolidPattern));
-    painter.drawRect(-1,-1,858,68);
+//    QPainter painter(this);
+//    painter.setPen(QPen(QColor(228,228,228),Qt::SolidLine));
+//    painter.setBrush(QBrush(QColor(TITLE_COLOR),Qt::SolidPattern));
+//    painter.drawRect(-1,-1,858,68);
 }
 
 void AccountPage::on_accountComboBox_currentIndexChanged(const QString &arg1)

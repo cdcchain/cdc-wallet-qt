@@ -59,7 +59,7 @@ MainPage::MainPage(QWidget *parent) :
     ui->accountTableWidget->horizontalHeader()->setVisible(true);
     ui->accountTableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 
-    ui->addAccountBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:16px;}QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}QToolButton:disabled{background-color:#cecece;}");
+    ui->addAccountBtn->setStyleSheet("color:white;border:1px solid rgb("STR_BUTTON_COLOR");background-color:rgb("STR_BUTTON_COLOR");");
 
     ui->accountTableWidget->setColumnWidth(0,173);
     ui->accountTableWidget->setColumnWidth(1,424);

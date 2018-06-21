@@ -24,19 +24,23 @@ TitleBar::TitleBar(QWidget *parent) :
     ui->setupUi(this);    
 
     setAutoFillBackground(true);
-    QPalette palette;
-    palette.setBrush(QPalette::Background, QBrush(QPixmap(":/pic/cplpic/titleBg.png")));
-    setPalette(palette);
+//    QPalette palette;
+//    palette.setBrush(QPalette::Background, QBrush(QPixmap(":/pic/cplpic/titleBg.png")));
+//    setPalette(palette);
 
     ui->newsBtn->hide();
     ui->newsBtn2->hide();
 
-    ui->minBtn->setStyleSheet("QToolButton{background-image:url(:/pic/pic2/minimize2.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}"
-                              "QToolButton:hover{background-image:url(:/pic/pic2/minimize_hover.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
-    ui->closeBtn->setStyleSheet("QToolButton{background-image:url(:/pic/pic2/close2.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}"
-                                "QToolButton:hover{background-image:url(:/pic/pic2/close_hover.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
-    ui->menuBtn->setStyleSheet("QToolButton{background-image:url(:/pic/pic2/set.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
-    ui->lockBtn->setStyleSheet("QToolButton{background-image:url(:/pic/pic2/lockBtn.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
+    ui->minBtn->setStyleSheet("QToolButton{background-image:url(:/pic/cplpic/min.png);background-repeat: no-repeat;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
+    ui->closeBtn->setStyleSheet("QToolButton{background-image:url(:/pic/cplpic/close.png);background-repeat: no-repeat;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
+    ui->menuBtn->setStyleSheet("QToolButton{background-image:url(:/pic/cplpic/settingsIcon.png);background-repeat: no-repeat;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
+    ui->lockBtn->setStyleSheet("QToolButton{background-image:url(:/pic/cplpic/lockIcon.png);background-repeat: no-repeat;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
+    ui->titleBg->setStyleSheet("background-image: url(:/pic/cplpic/titleBg.png);");
+    ui->titleBg->setGeometry(126,0,960,76);
+    ui->logo->setStyleSheet("background-image: url(:/pic/cplpic/logo.png);background-repeat: no-repeat;");
+    ui->logo->setGeometry(14,14,126,48);
+    ui->version->setStyleSheet("color: white;");
+    ui->walletIcon->setStyleSheet("background-image: url(:/pic/cplpic/walletIcon.png);background-repeat: no-repeat;");
 
     connect( CDC::getInstance(), SIGNAL(jsonDataUpdated(QString)), this, SLOT(jsonDataUpdated(QString)));
     timer = new QTimer(this);
@@ -44,7 +48,7 @@ TitleBar::TitleBar(QWidget *parent) :
     timer->setInterval(10000);
     timer->start();
 
-    ui->versionLabel->setText( QString(ASSET_NAME" Wallet  v") + WALLET_VERSION);
+    ui->version->setText( QString(" Wallet  v") + WALLET_VERSION);
 
     onTimeOut();
 	DLOG_QT_WALLET_FUNCTION_END;

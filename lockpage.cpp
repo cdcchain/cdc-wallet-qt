@@ -12,6 +12,7 @@
 #include <windows.h>
 #endif
 
+#include "pubic_define.h"
 #include "lockpage.h"
 #include "ui_lockpage.h"
 #include "blockchain.h"
@@ -30,8 +31,8 @@ LockPage::LockPage(QWidget *parent) :
     connect( CDC::getInstance(), SIGNAL(jsonDataUpdated(QString)), this, SLOT(jsonDataUpdated(QString)));
 
     setAutoFillBackground(true);
-    QPalette palette;
-    palette.setBrush(QPalette::Background, QBrush(QPixmap(":/pic/cplpic/bg.png")));
+    QPalette palette(this->palette());
+    palette.setColor(QPalette::Background, QColor(MENU_BACKGROUND_COLOR));
     setPalette(palette);
 
     ui->pwdLineEdit->setStyleSheet("color:white;background:transparent;border-width:0;border-style:outset;");

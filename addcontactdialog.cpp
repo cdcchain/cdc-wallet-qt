@@ -32,9 +32,9 @@ AddContactDialog::AddContactDialog(QWidget *parent) :
 
     connect( CDC::getInstance(), SIGNAL(jsonDataUpdated(QString)), this, SLOT(jsonDataUpdated(QString)));
 
-    QRegExp regx("[a-zA-Z0-9\-\.\ \n]+$");
-    QValidator *validator = new QRegExpValidator(regx, this);
-    ui->addressLineEdit->setValidator( validator );
+//    QRegExp regx("0x[a-zA-Z0-9\-\.\ \n]+$");
+//    QValidator *validator = new QRegExpValidator(regx, this);
+//    ui->addressLineEdit->setValidator( validator );
 
     ui->addressLineEdit->setStyleSheet("color:black;border:1px solid #CCCCCC;border-radius:3px;");
     ui->addressLineEdit->setTextMargins(8,0,0,0);

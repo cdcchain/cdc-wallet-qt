@@ -17,22 +17,24 @@ QString getBtnStyle(bool isSelected, int pageIdx)
 {
     QString style;
     QString icon;
+    QString padding = "0px 15px 0px 0px";
     switch (pageIdx)
     {
     case 1:
-        icon = "/pic/pic2/send.png";
+        icon = "/pic/cplpic/accountIcon.png";
         break;
     case 2:
-        icon = "/pic/pic2/send.png";
+        icon = "/pic/cplpic/assetIcon.png";
         break;
     case 3:
         icon = "/pic/cplpic/transferIcon.png";
         break;
     case 4:
-        icon = "/pic/pic2/send.png";
+        icon = "/pic/cplpic/send.png";
         break;
     case 5:
-        icon = "/pic/pic2/send.png";
+        icon = "/pic/cplpic/contactIcon.png";
+        padding = "0px 5px 0px 0px";
         break;
     }
     if (isSelected)
@@ -41,7 +43,7 @@ QString getBtnStyle(bool isSelected, int pageIdx)
              .append(STR_BUTTON_COLOR");border:none;background-image: url(:")
              .append(icon).append(");background-repeat: no-repeat;background-position: left;")
              .append("background-attachment: fixed;background-clip: padding;border-style: flat;")
-             .append("margin:0px 0px 0px 10px;padding:0px 20px 0px 0px;");
+             .append("margin:0px 0px 0px 10px;padding:").append(padding).append(";");
     }
     else
     {
@@ -49,7 +51,7 @@ QString getBtnStyle(bool isSelected, int pageIdx)
              .append("border:none;background-image: url(:").append(icon)
              .append(");background-repeat: no-repeat;background-position: left;")
              .append("background-attachment: fixed;background-clip: padding;border-style: flat;")
-             .append("margin:0px 0px 0px 10px;padding:0px 20px 0px 0px;");
+             .append("margin:0px 0px 0px 10px;padding:").append(padding).append(";");
     }
     return style;
 }
