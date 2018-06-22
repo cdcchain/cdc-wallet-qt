@@ -213,7 +213,7 @@ background:transparent;</string>
    <property name="geometry">
     <rect>
      <x>722</x>
-     <y>450</y>
+     <y>430</y>
      <width>60</width>
      <height>30</height>
     </rect>
@@ -240,7 +240,7 @@ background:transparent;</string>
    <property name="geometry">
     <rect>
      <x>662</x>
-     <y>455</y>
+     <y>435</y>
      <width>21</width>
      <height>21</height>
     </rect>
@@ -253,7 +253,7 @@ background:transparent;</string>
    <property name="geometry">
     <rect>
      <x>592</x>
-     <y>450</y>
+     <y>430</y>
      <width>61</width>
      <height>30</height>
     </rect>
@@ -271,7 +271,7 @@ background:transparent;</string>
    <property name="geometry">
     <rect>
      <x>692</x>
-     <y>450</y>
+     <y>430</y>
      <width>31</width>
      <height>30</height>
     </rect>
@@ -295,7 +295,7 @@ background:transparent;</string>
    <property name="geometry">
     <rect>
      <x>522</x>
-     <y>450</y>
+     <y>430</y>
      <width>60</width>
      <height>30</height>
     </rect>

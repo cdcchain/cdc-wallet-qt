@@ -91,20 +91,17 @@ MainPage::MainPage(QWidget *parent) :
 
     ui->loadingWidget->setGeometry(0,93,827,448);
     ui->loadingLabel->move(314,101);
-
     ui->initLabel->hide();
-
-    ui->scanBtn->setStyleSheet("QToolButton{background-image:url(:/pic/cplpic/refresh2.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
-
-    gif = new QMovie(":/pic/cplpic/refresh2.gif");
+    ui->scanBtn->setStyleSheet("background-image:url(:/pic/cplpic/refresh.png);background-repeat: no-repeat;"
+                               "background-position: center;background-attachment: fixed;"
+                               "background-clip: padding;border-style: flat;");
+    gif = new QMovie(":/pic/cplpic/refresh.gif");
     gif->setScaledSize( QSize(16,16));
     ui->scanLabel->setMovie(gif);
     ui->scanLabel->hide();
     connect(gif,SIGNAL(finished()),ui->scanLabel,SLOT(hide()));
     connect(gif,SIGNAL(finished()),ui->scanBtn,SLOT(show()));
-
     ui->scanBtn->setToolTip(tr("If the balance or transaction record is incorrect, rescan the blockchain"));
-
 
     DLOG_QT_WALLET_FUNCTION_END;
 }
@@ -275,10 +272,7 @@ void MainPage::updateAccountList()
 
     CDC::getInstance()->configFile->endGroup();
     mutexForConfigFile.unlock();
-
     ui->loadingWidget->hide();
-
-    
 }
 
 void MainPage::on_addAccountBtn_clicked()
@@ -292,37 +286,7 @@ void MainPage::on_addAccountBtn_clicked()
 
 void MainPage::on_accountTableWidget_cellClicked(int row, int column)
 {
-    
-
-//    AccountCellWidget* cellWidget = static_cast<AccountCellWidget*>( ui->accountTableWidget->cellWidget(row,0) );
-
-//    emit openAccountPage( cellWidget->accountName);
-
     emit openAccountPage( ui->accountTableWidget->item(row,0)->text());
-
-    //    showDetailWidget( cellWidget->accountName );
-
-//        showDetailWidget( ui->accountTableWidget->item(row,0)->text() );
-
-//    if( currentAccountIndex >= 0 && currentAccountIndex != row)
-//    {
-//        AccountCellWidget* cellWidget2 = static_cast<AccountCellWidget*>( ui->accountTableWidget->cellWidget(currentAccountIndex,0) );
-//        cellWidget2->setBackgroundColor( 255,255,255);
-//        for( int i = 1; i < 3; i++)
-//        {
-//            ui->accountTableWidget->item(currentAccountIndex,i)->setBackgroundColor(QColor(255,255,255));
-//        }
-//    }
-
-//    cellWidget->setBackgroundColor( 245,248,248,150);
-//    for( int i = 1; i < 3; i++)
-//    {
-//        ui->accountTableWidget->item(row,i)->setBackgroundColor(QColor(245,248,248,150));
-//    }
-
-//    currentAccountIndex = row;
-
-	
 }
 
 
