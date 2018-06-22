@@ -719,7 +719,7 @@ void CDC::collectContractTransactions(QString contractAddress)
         int fromBlockHeight = ERC20TokenInfoMap.value(contractAddress).collectedBlockHeight + 1;
         int toBlockHeight = currentBlockHeight;
 
-        qDebug() << contractAddress << ", " << fromBlockHeight << ", " << toBlockHeight;
+        qDebug() << __FUNCTION__" " << contractAddress << ", " << fromBlockHeight << ", " << toBlockHeight;
         if( fromBlockHeight > toBlockHeight)    return;
         postRPC( toJsonFormat( "id_blockchain_list_contract_transaction_history+" + contractAddress + "+" + QString::number(toBlockHeight),
                                "blockchain_list_contract_transaction_history",

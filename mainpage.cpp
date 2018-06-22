@@ -357,7 +357,7 @@ int tableWidgetPosToRow(QPoint pos, QTableWidget* table);
 
 void MainPage::refresh()
 {
-    qDebug() << "mainpage refresh"   << refreshOrNot;
+//    qDebug() << __FUNCTION__  << refreshOrNot;
     if( !refreshOrNot) return;
 
     updateAccountList();

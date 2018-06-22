@@ -69,19 +69,6 @@ Frame::Frame(): timer(NULL),
 #endif
 
     setFrameShape(QFrame::NoFrame);
-//    setMouseTracking(true);
-
-//    setStyleSheet("Frame{background-color:white; border: 4px solid #CCCCCC;border-radius:5px;}"
-//                  "QScrollBar:vertical{width:8px;background:transparent;margin:0px,0px,0px,0px;padding-top:2px;padding-bottom:3px;}"
-//                  "QScrollBar::handle:vertical{width:8px;background:rgba(130,137,143,20%);border-radius:4px;min-height:20;}"
-//                  "QScrollBar::handle:vertical:hover{width:8px;background:rgba(130,137,143,100%);border-radius:4px;min-height:20;}"
-//                  "QScrollBar::add-line:vertical{height:9px;width:8px;border-image:url(:/images/a/3.png);subcontrol-position:bottom;}"
-//                  "QScrollBar::sub-line:vertical{height:9px;width:8px;border-image:url(:/images/a/1.png);subcontrol-position:top;}"
-//                  "QScrollBar::add-line:vertical:hover{height:9px;width:8px;border-image:url(:/images/a/4.png);subcontrol-position:bottom;}"
-//                  "QScrollBar::sub-line:vertical:hover{height:9px;width:8px;border-image:url(:/images/a/2.png);subcontrol-position:top;}"
-//                  "QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical{background:rgba(0,0,0,0%);border-radius:4px;}"
-//                  );
-
     mouse_press = false;
     currentPageNum = 0;
     lastPage = "";
@@ -436,7 +423,7 @@ void Frame::showLockPage()
 
 
     CDC::getInstance()->postRPC( toJsonFormat( "id_lock", "lock", QStringList() << "" ));
-qDebug() << "lock ";
+qDebug() << __FUNCTION__;
     DLOG_QT_WALLET_FUNCTION_END;
 }
 
@@ -446,7 +433,7 @@ void Frame::autoLock()
     timer->stop();
 
     CDC::getInstance()->postRPC( toJsonFormat( "id_lock", "lock", QStringList() << "" ));
-qDebug() << "autolock ";
+qDebug() << __FUNCTION__;
     DLOG_QT_WALLET_FUNCTION_END;
 }
 
@@ -633,7 +620,7 @@ void Frame::closeCurrentPage()
 {
     DLOG_QT_WALLET_FUNCTION_BEGIN;
 
-    qDebug() << " closeCurrentPage :" << currentPageNum;
+    qDebug() << __FUNCTION__ << " :" << currentPageNum;
 
     switch (currentPageNum) {
     case 0:

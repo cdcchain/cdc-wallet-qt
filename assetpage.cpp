@@ -15,11 +15,6 @@
 #include "dialog/addtokendialog.h"
 #include "showcontentdialog.h"
 
-//#define ASSETPAGE_ALLASSETBTN_SELECTED_STYLE     "QToolButton{background-color:rgb(105,67,155);color:white;border:1px solid rgb(105,67,155);border-top-left-radius: 3px;border-bottom-left-radius: 3px;}"
-//#define ASSETPAGE_ALLASSETBTN_UNSELECTED_STYLE   "QToolButton{background-color:white;color:rgb(105,67,155);border:1px solid rgb(105,67,155);border-top-left-radius: 3px;border-bottom-left-radius: 3px;}"
-//#define ASSETPAGE_MYASSETBTN_SELECTED_STYLE        "QToolButton{background-color:rgb(105,67,155);color:white;border:1px solid rgb(105,67,155);border-top-right-radius: 3px;border-bottom-right-radius: 3px;}"
-//#define ASSETPAGE_MYASSETBTN_UNSELECTED_STYLE      "QToolButton{background-color:white;color:rgb(105,67,155);border:1px solid rgb(105,67,155);border-top-right-radius: 3px;border-bottom-right-radius: 3px;}"
-
 
 AssetPage::AssetPage(QWidget *parent) :
     QWidget(parent),
@@ -38,7 +33,6 @@ AssetPage::AssetPage(QWidget *parent) :
     updateMyAsset();
 
     ui->myAssetWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
-//    ui->myAssetWidget->setFocusPolicy(Qt::NoFocus);
     ui->myAssetWidget->setColumnWidth(0,80);
     ui->myAssetWidget->setColumnWidth(1,80);
     ui->myAssetWidget->setColumnWidth(2,290);
@@ -51,15 +45,12 @@ AssetPage::AssetPage(QWidget *parent) :
     ui->myAssetWidget->horizontalHeader()->setStyleSheet("QHeaderView:section{color:white;background-color:rgb("
                                                          STR_MENU_BACKGROUND_COLOR");border:1px solid grey;}");
     ui->myAssetWidget->horizontalHeader()->setVisible(true);
-//    QTableWidgetItem *columnHeaderItem = ui->myAssetWidget->horizontalHeaderItem(1);
-//    columnHeaderItem->setBackgroundColor(QColor(MENU_BACKGROUND_COLOR));
-//    columnHeaderItem->setTextColor(QColor(200,111,30));
-
     ui->addTokenBtn->setStyleSheet("QToolButton{color:rgb("STR_BUTTON_COLOR");border:1px solid rgb("STR_BUTTON_COLOR");border-radius:10px;}QToolButton:hover{color:rgb("STR_BUTTON_COLOR");}");
 }
 
 AssetPage::~AssetPage()
 {
+    qDebug() << __FUNCTION__;
     delete ui;
 }
 
@@ -87,20 +78,20 @@ void AssetPage::updateMyAsset()
         ui->myAssetWidget->setRowHeight(myAssetCount,45);
 
         ERC20TokenInfo info = CDC::getInstance()->ERC20TokenInfoMap.value(contractAddress);
-
+//        qDebug() << __FUNCTION__" " << info.name << ", " << info.symbol << ", " << info.contractAddress;
         ui->myAssetWidget->setItem(myAssetCount,0,new QTableWidgetItem(info.name));
         ui->myAssetWidget->setItem(myAssetCount,1,new QTableWidgetItem(info.symbol));
         ui->myAssetWidget->setItem(myAssetCount,2,new QTableWidgetItem(info.contractAddress));
         ui->myAssetWidget->setItem(myAssetCount,3,new QTableWidgetItem(getBigNumberString(info.totalSupply,info.precision)));
         ui->myAssetWidget->setItem(myAssetCount,4,new QTableWidgetItem(getBigNumberString(info.precision,1)));
-        ui->myAssetWidget->setItem(myAssetCount,5,new QTableWidgetItem(tr("unfollow")));
-        ui->myAssetWidget->item(myAssetCount,5)->setTextColor(QColor(65,205,82));
+//        ui->myAssetWidget->setItem(myAssetCount,5,new QTableWidgetItem(tr("unfollow")));
+//        ui->myAssetWidget->item(myAssetCount,5)->setTextColor(QColor(65,205,82));
 
-        for(int j = 0; j < 6; j++)
-        {
-            ui->myAssetWidget->item(myAssetCount,j)->setTextAlignment(Qt::AlignCenter);
-        }
-
+//        for(int j = 0; j < 6; j++)
+//        {
+//            ui->myAssetWidget->item(myAssetCount,j)->setTextAlignment(Qt::AlignCenter);
+//        }
+//        qDebug() << __FUNCTION__" " << myAssetCount;
         myAssetCount++;
     }
 

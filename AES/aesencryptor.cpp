@@ -7,7 +7,7 @@
 #include "aesencryptor.h"
 
 #include <fstream>
-#include <QDebug>
+
 using namespace std;
 
 AesEncryptor::AesEncryptor(unsigned char* key)

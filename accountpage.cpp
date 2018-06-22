@@ -188,7 +188,7 @@ void AccountPage::updateAssetList()
     ui->assetComboBox->addItem(ASSET_NAME);
     foreach (QString key, CDC::getInstance()->ERC20TokenInfoMap.keys())
     {
-        qDebug() << "AccountPage::updateAssetList: " << key << ", " << CDC::getInstance()->ERC20TokenInfoMap.value(key).symbol;
+        qDebug() << __FUNCTION__ << ": " << key << ", " << CDC::getInstance()->ERC20TokenInfoMap.value(key).symbol;
         ui->assetComboBox->addItem( CDC::getInstance()->ERC20TokenInfoMap.value(key).symbol);
     }
 

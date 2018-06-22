@@ -80,7 +80,7 @@ void AddContactDialog::on_okBtn_clicked()
 
     if( !CDC::getInstance()->contactsFile->open(QIODevice::ReadWrite))
     {
-        qDebug() << "contact.dat not exist";
+        qDebug() << __FUNCTION__ << " contact.dat not exist";
         return;
     }
 
