@@ -2,12 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include <QDebug>
 
 #include "transferconfirmdialog.h"
 #include "ui_transferconfirmdialog.h"
-
-#include <QDebug>
-
+#include "pubic_define.h"
 #include "blockchain.h"
 #include "rpcthread.h"
 #include "commondialog.h"
@@ -40,7 +39,9 @@ TransferConfirmDialog::TransferConfirmDialog(QString address, QString amount, QS
     ui->feeLabel->setText( "<body><font color=#409AFF>" + fee + "</font> " + ASSET_NAME +"</body>");
     ui->remarkLabel->setText( remark);
     ui->okBtn->setText(tr("Ok"));
+    ui->okBtn->setStyleSheet("background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:3px;");
     ui->cancelBtn->setText(tr("Cancel"));
+    ui->cancelBtn->setStyleSheet("background-color:#ffffff;color:#484848;border:1px solid rgb("STR_BUTTON_COLOR");border-radius:3px;");
     ui->pwdLineEdit->setStyleSheet("color:black;border:1px solid #CCCCCC;border-radius:3px;");
     ui->pwdLineEdit->setPlaceholderText( tr("Enter login password"));
     ui->pwdLineEdit->setTextMargins(8,0,0,0);

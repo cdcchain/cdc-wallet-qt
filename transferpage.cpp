@@ -185,13 +185,13 @@ void TransferPage::on_sendBtn_clicked()
         return;
     }
 
-    if( ui->feeLineEdit->text().toDouble() <= 1)
-    {
-        CommonDialog tipDialog(CommonDialog::OkOnly);
-        tipDialog.setText( tr("The fee can not be 1"));
-        tipDialog.pop();
-        return;
-    }
+//    if( ui->feeLineEdit->text().toDouble() <= 1)
+//    {
+//        CommonDialog tipDialog(CommonDialog::OkOnly);
+//        tipDialog.setText( tr("The fee can not be 1"));
+//        tipDialog.pop();
+//        return;
+//    }
 
     QString remark = ui->messageLineEdit->text();
     if( remark.size() == 0)    // 转地址如果没有备注 会自动添加 TO ...   所以添加空格

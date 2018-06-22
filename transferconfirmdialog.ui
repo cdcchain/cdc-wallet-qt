@@ -78,9 +78,7 @@
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true">QToolButton{background-color:rgb(125,85,40);color:#ffffff;border:none;border-radius:3px;}
-QToolButton:hover{background-color:rgb(185,150,85);}
-</string>
+      <string notr="true"/>
      </property>
      <property name="text">
       <string/>
@@ -263,8 +261,7 @@ QToolButton:hover{background-color:rgb(185,150,85);}
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true">QToolButton{background-color:#ffffff;color:#484848;border:1px solid rgb(125,85,40);border-radius:3px;}
-QToolButton:hover{color:rgb(125,85,40);}</string>
+      <string notr="true"/>
      </property>
      <property name="text">
       <string/>
