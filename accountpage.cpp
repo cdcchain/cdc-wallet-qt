@@ -477,50 +477,6 @@ AccountPage::TransactionDetail AccountPage::getDetail(TransactionInfo info)
         }
 
     }
-    else
-    {
-//        if( info.isMarketCancel)
-//        {
-//            Entry entry = info.entries.at(0);
-//            result.opposite = QString::fromLocal8Bit("市场撤单");
-//            result.type     = 6;
-//            result.assetAmount = entry.amount;
-//            result.memo     = entry.memo;
-//        }
-//        else
-//        {
-//            if( info.entries.size() > 1)        // entry为2个 则为市场成交
-//            {
-//                Entry entry = info.entries.at(1);
-//                result.opposite = QString::fromLocal8Bit("市场成交");
-//                result.type     = 5;
-//                result.assetAmount = entry.amount;
-//                result.memo     = entry.memo;
-//            }
-//            else                                // entry为1个 则为市场挂单
-//            {
-//                Entry entry = info.entries.at(0);
-//                if( entry.fromAccount == accountName)
-//                {
-//                    if( entry.toAccount.startsWith("ASK-"))
-//                    {
-//                        result.opposite = QString::fromLocal8Bit("市场挂卖单");
-//                        result.type     = 4;
-//                        result.assetAmount = entry.amount;
-//                        result.memo     = entry.memo;
-//                    }
-//                    else if( entry.toAccount.startsWith("BID-"))
-//                    {
-//                        result.opposite = QString::fromLocal8Bit("市场挂买单");
-//                        result.type     = 3;
-//                        result.assetAmount = entry.amount;
-//                        result.memo     = entry.memo;
-//                    }
-//                }
-//            }
-//        }
-    }
-
 
     return result;
 }
@@ -632,7 +588,7 @@ void AccountPage::showContractTransactions()
         }
         else
         {
-            ui->accountTransactionsTableWidget->setItem(i,5,new QTableWidgetItem(getBigNumberString(transaction.fee, info.precision)));
+            ui->accountTransactionsTableWidget->setItem(i,5,new QTableWidgetItem(getBigNumberString(transaction.fee, 100000000)));
         }
 
 
@@ -640,38 +596,8 @@ void AccountPage::showContractTransactions()
         {
             ui->accountTransactionsTableWidget->item(i,j)->setTextAlignment(Qt::AlignCenter);
         }
-
     }
-
-
 }
-
-//void AccountPage::on_accountTransactionsTableWidget_cellClicked(int row, int column)
-//{
-//    if( column == 1 )
-//    {
-//        ShowContentDialog showContentDialog( ui->accountTransactionsTableWidget->item(row, column)->text(),this);
-//        int scrollBarValue = ui->accountTransactionsTableWidget->verticalScrollBar()->sliderPosition();
-//        showContentDialog.move( ui->accountTransactionsTableWidget->mapToGlobal( QPoint(120, 57 * (row - scrollBarValue) + 42)));
-//        showContentDialog.exec();
-
-//        return;
-//    }
-
-//    if( column == 5)
-//    {
-
-//        QString remark = ui->accountTransactionsTableWidget->item(row, column)->text();
-//        remark.remove(' ');
-//        if( remark.isEmpty() )  return;
-//        ShowContentDialog showContentDialog( ui->accountTransactionsTableWidget->item(row, column)->text(),this);
-//        int scrollBarValue = ui->accountTransactionsTableWidget->verticalScrollBar()->sliderPosition();
-//        showContentDialog.move( ui->accountTransactionsTableWidget->mapToGlobal( QPoint(640, 57 * (row - scrollBarValue) + 42)));
-//        showContentDialog.exec();
-//        return;
-//    }
-//}
-
 
 void AccountPage::on_prePageBtn_clicked()
 {
@@ -685,7 +611,6 @@ void AccountPage::on_prePageBtn_clicked()
 
 void AccountPage::on_nextPageBtn_clicked()
 {
-//    if( currentPageIndex >=  ((searchList.size() - 1)/10 + 1))  return;
     int totalPageNum = ui->pageLabel->text().remove("/").toInt();
     if(  currentPageIndex >= totalPageNum )  return;
 
@@ -755,36 +680,6 @@ void AccountPage::on_accountTransactionsTableWidget_cellPressed(int row, int col
 
         return;
     }
-
-//    if( column == 3 )
-//    {
-//        ShowContentDialog showContentDialog( ui->accountTransactionsTableWidget->item(row, column)->text(),this);
-
-//        int x = ui->accountTransactionsTableWidget->columnViewportPosition(column) + ui->accountTransactionsTableWidget->columnWidth(column) / 2
-//                - showContentDialog.width() / 2;
-//        int y = ui->accountTransactionsTableWidget->rowViewportPosition(row) - 10 + ui->accountTransactionsTableWidget->horizontalHeader()->height();
-
-//        showContentDialog.move( ui->accountTransactionsTableWidget->mapToGlobal( QPoint(x, y)));
-//        showContentDialog.exec();
-
-//        return;
-//    }
-
-//    if( column == 6 )
-//    {
-//        ShowContentDialog showContentDialog( ui->accountTransactionsTableWidget->item(row, column)->text(),this);
-
-//        int x = ui->accountTransactionsTableWidget->columnViewportPosition(column) + ui->accountTransactionsTableWidget->columnWidth(column) / 2
-//                - showContentDialog.width() / 2;
-//        int y = ui->accountTransactionsTableWidget->rowViewportPosition(row) - 10 + ui->accountTransactionsTableWidget->horizontalHeader()->height();
-
-//        showContentDialog.move( ui->accountTransactionsTableWidget->mapToGlobal( QPoint(x, y)));
-//        showContentDialog.exec();
-
-
-
-//        return;
-//    }
 }
 
 void AccountPage::on_qrcodeBtn_clicked()

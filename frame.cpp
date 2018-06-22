@@ -1251,6 +1251,7 @@ void Frame::jsonDataUpdated(QString id)
             {
                 map = CDC::getInstance()->accountContractBalanceMap[accountAddress];
             }
+            qDebug() << __FUNCTION__" " << accountAddress << ", " << balance;
             map.insert(contractAddress,balance);
             CDC::getInstance()->accountContractBalanceMap.insert(accountAddress,map);
         }
