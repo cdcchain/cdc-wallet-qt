@@ -263,8 +263,6 @@ void TitleBar::on_consoleBtn_clicked()
         CDC::getInstance()->consoleWidget->setAttribute(Qt::WA_DeleteOnClose);
         CDC::getInstance()->consoleWidget->show();
     }
-
-
 }
 
 void TitleBar::paintEvent(QPaintEvent *)

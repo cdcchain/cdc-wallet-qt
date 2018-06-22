@@ -102,7 +102,7 @@
       </rect>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="page">
       <widget class="QToolButton" name="saveBtn">
@@ -126,9 +126,7 @@
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="styleSheet">
-        <string notr="true">QToolButton{background-color:rgb(125,85,40);color:#ffffff;border:none;border-radius:3px;}
-QToolButton:hover{background-color:rgb(185,150,85);}
-</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>保存</string>
@@ -492,9 +490,7 @@ QToolButton:hover{background-color:rgb(185,150,85);}
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="styleSheet">
-        <string notr="true">QToolButton{background-color:rgb(105,67,155);color:#ffffff;border:none;border-radius:3px;}
-QToolButton:hover{background-color:rgb(125,87,180);}
-QToolButton:disabled{background-color:#cecece;}</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>保存</string>

@@ -37,9 +37,10 @@ SetDialog::SetDialog(QWidget *parent) :
     ui->widget->setStyleSheet("#widget {background-color:rgba(10, 10, 10,100);}");
     ui->containerWidget->setObjectName("containerwidget");
     ui->containerWidget->setStyleSheet("#containerwidget{background-color: rgb(246, 246, 246);border:1px groove rgb(180,180,180);}");
-    ui->titleLabel->setPixmap(QPixmap(":/pic/cplpic/titleBg3.png"));
-
+    ui->titleLabel->setStyleSheet("background-color:rgb("STR_DIALOG_TITLE_COLOR");");
     ui->containerWidget->installEventFilter(this);
+    ui->saveBtn->setStyleSheet("background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:3px;}");
+    ui->confirmBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:3px;}QToolButton:disabled{background-color:#cecece;}");
 
     connect( CDC::getInstance(), SIGNAL(jsonDataUpdated(QString)), this, SLOT(jsonDataUpdated(QString)));
 
@@ -57,7 +58,6 @@ SetDialog::SetDialog(QWidget *parent) :
         ui->nolockCheckBox->setChecked(false);
         ui->lockTimeSpinBox->setEnabled(true);
     }
-
 
     QString language = CDC::getInstance()->language;
     if( language == "Simplified Chinese")
@@ -82,7 +82,7 @@ SetDialog::SetDialog(QWidget *parent) :
     qDebug() << "transactionFee: " << CDC::getInstance()->transactionFee;
     ui->feeLineEdit->setText(QString::number(float_t(CDC::getInstance()->transactionFee) / CDC::getInstance()->assetInfoMap.value(0).precision));
 
-    QRegExp rx("^([1-9]\\d*)(?:\\.\\d{0,4})?$|(^\\t?$)");
+    QRegExp rx("^([1-9]\\d*)(?:\\.\\d{0,2})?$|(^\\t?$)");
     QRegExpValidator *pReg = new QRegExpValidator(rx, this);
     ui->feeLineEdit->setValidator(pReg);
 

@@ -28,11 +28,9 @@ AddTokenDialog::AddTokenDialog(QWidget *parent) :
     ui->widget->setStyleSheet("#widget {background-color:rgba(10, 10, 10,100);}");
     ui->containerWidget->setObjectName("containerwidget");
     ui->containerWidget->setStyleSheet("#containerwidget{background-color: rgb(246, 246, 246);border:1px groove rgb(180,180,180);}");
-
     ui->contractAddressLineEdit->setStyleSheet("color:black;border:1px solid #CCCCCC;border-radius:3px;");
     ui->contractAddressLineEdit->setTextMargins(8,0,0,0);
     ui->contractAddressLineEdit->setFocus();
-
     ui->okBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:3px;}QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}");
     ui->cancelBtn->setStyleSheet("QToolButton{background-color:#ffffff;color:#484848;border:1px solid rgb("STR_BUTTON_COLOR");border-radius:3px;}QToolButton:hover{color:rgb("STR_BUTTON_COLOR");}");
 

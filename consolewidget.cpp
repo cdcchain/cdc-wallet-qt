@@ -25,17 +25,13 @@ ConsoleWidget::ConsoleWidget(QWidget *parent) :
 
     connect( CDC::getInstance(), SIGNAL(jsonDataUpdated(QString)), this, SLOT(jsonDataUpdated(QString)));
 
-    ui->closeBtn->setStyleSheet("QToolButton{background-image:url(:/pic/pic2/close4.png);background-repeat: repeat-xy;background-position: center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
-
+    ui->closeBtn->setStyleSheet("QToolButton{background-image:url(:/pic/cplpic/close.png);background-repeat:no-repeat;background-position:center;background-attachment: fixed;background-clip: padding;border-style: flat;}");
     ui->consoleLineEdit->setFocus();
-
     ui->checkBox->setStyleSheet("QCheckBox::indicator{ image:url(:/pic/pic2/checkBox_unchecked.png); }"
-                                    "QCheckBox::indicator:checked{ image:url(:/pic/cplpic/checkBox_checked.png); }");
-
-//    ui->consoleBrowser->setText(QString::fromLocal8Bit("<body><font color=red>警告： 已有骗子通过要求用户在此输入指令以盗取钱包。不要在没有完全理解命令规范时使用控制台。</font><p></p><p></p></body>"));
-
-    ui->consoleBrowser->setText( "<body><font color=red>" + tr("Warning: Some fraud may ask the user to enter the instruction here to steal the coins. Do not use the console without fully understanding the commands' specification.") + "</font><p></p><p></p></body>" );
+                                "QCheckBox::indicator:checked{ image:url(:/pic/cplpic/checkBox_checked.png); }");
+    ui->consoleBrowser->setText("<body><font color=red>" + tr("Warning: Some fraud may ask the user to enter the instruction here to steal the coins. Do not use the console without fully understanding the commands' specification.") + "</font><p></p><p></p></body>" );
     ui->clearBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:16px;}QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}QToolButton:disabled{background-color:#cecece;}");
+    ui->titleLabel->setStyleSheet("background-color:rgb("STR_DIALOG_TITLE_COLOR");");
 }
 
 ConsoleWidget::~ConsoleWidget()

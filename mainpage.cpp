@@ -411,7 +411,7 @@ void MainPage::jsonDataUpdated(QString id)
         int pos = result.indexOf("\"pay_balance\":") + 14;
         QString payBal = result.mid( pos, result.indexOf("}", pos) - pos );
         payBal.remove("\"");
-        CDC::getInstance()->delegateSalaryMap.insert(id.mid(37), payBal.toInt() / 10000.0);
+        CDC::getInstance()->delegateSalaryMap.insert(id.mid(37), payBal.toInt() / 10000000.0);
         return;
     }
 

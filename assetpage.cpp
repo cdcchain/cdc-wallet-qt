@@ -15,10 +15,10 @@
 #include "dialog/addtokendialog.h"
 #include "showcontentdialog.h"
 
-#define ASSETPAGE_ALLASSETBTN_SELECTED_STYLE     "QToolButton{background-color:rgb(105,67,155);color:white;border:1px solid rgb(105,67,155);border-top-left-radius: 3px;border-bottom-left-radius: 3px;}"
-#define ASSETPAGE_ALLASSETBTN_UNSELECTED_STYLE   "QToolButton{background-color:white;color:rgb(105,67,155);border:1px solid rgb(105,67,155);border-top-left-radius: 3px;border-bottom-left-radius: 3px;}"
-#define ASSETPAGE_MYASSETBTN_SELECTED_STYLE        "QToolButton{background-color:rgb(105,67,155);color:white;border:1px solid rgb(105,67,155);border-top-right-radius: 3px;border-bottom-right-radius: 3px;}"
-#define ASSETPAGE_MYASSETBTN_UNSELECTED_STYLE      "QToolButton{background-color:white;color:rgb(105,67,155);border:1px solid rgb(105,67,155);border-top-right-radius: 3px;border-bottom-right-radius: 3px;}"
+//#define ASSETPAGE_ALLASSETBTN_SELECTED_STYLE     "QToolButton{background-color:rgb(105,67,155);color:white;border:1px solid rgb(105,67,155);border-top-left-radius: 3px;border-bottom-left-radius: 3px;}"
+//#define ASSETPAGE_ALLASSETBTN_UNSELECTED_STYLE   "QToolButton{background-color:white;color:rgb(105,67,155);border:1px solid rgb(105,67,155);border-top-left-radius: 3px;border-bottom-left-radius: 3px;}"
+//#define ASSETPAGE_MYASSETBTN_SELECTED_STYLE        "QToolButton{background-color:rgb(105,67,155);color:white;border:1px solid rgb(105,67,155);border-top-right-radius: 3px;border-bottom-right-radius: 3px;}"
+//#define ASSETPAGE_MYASSETBTN_UNSELECTED_STYLE      "QToolButton{background-color:white;color:rgb(105,67,155);border:1px solid rgb(105,67,155);border-top-right-radius: 3px;border-bottom-right-radius: 3px;}"
 
 
 AssetPage::AssetPage(QWidget *parent) :
@@ -48,11 +48,12 @@ AssetPage::AssetPage(QWidget *parent) :
     ui->myAssetWidget->setShowGrid(true);
     ui->myAssetWidget->setFrameShape(QFrame::NoFrame);
     ui->myAssetWidget->setMouseTracking(true);
-
+    ui->myAssetWidget->horizontalHeader()->setStyleSheet("QHeaderView:section{color:white;background-color:rgb("
+                                                         STR_MENU_BACKGROUND_COLOR");border:1px solid grey;}");
     ui->myAssetWidget->horizontalHeader()->setVisible(true);
-    QTableWidgetItem *columnHeaderItem = ui->myAssetWidget->horizontalHeaderItem(1);
-    columnHeaderItem->setBackgroundColor(QColor(MENU_BACKGROUND_COLOR));
-    columnHeaderItem->setTextColor(QColor(200,111,30));
+//    QTableWidgetItem *columnHeaderItem = ui->myAssetWidget->horizontalHeaderItem(1);
+//    columnHeaderItem->setBackgroundColor(QColor(MENU_BACKGROUND_COLOR));
+//    columnHeaderItem->setTextColor(QColor(200,111,30));
 
     ui->addTokenBtn->setStyleSheet("QToolButton{color:rgb("STR_BUTTON_COLOR");border:1px solid rgb("STR_BUTTON_COLOR");border-radius:10px;}QToolButton:hover{color:rgb("STR_BUTTON_COLOR");}");
 }

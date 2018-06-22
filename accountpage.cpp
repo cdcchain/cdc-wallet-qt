@@ -252,15 +252,6 @@ void AccountPage::on_copyBtn_clicked()
     commonDialog.pop();
 }
 
-
-void AccountPage::paintEvent(QPaintEvent *)
-{
-//    QPainter painter(this);
-//    painter.setPen(QPen(QColor(228,228,228),Qt::SolidLine));
-//    painter.setBrush(QBrush(QColor(TITLE_COLOR),Qt::SolidPattern));
-//    painter.drawRect(-1,-1,858,68);
-}
-
 void AccountPage::on_accountComboBox_currentIndexChanged(const QString &arg1)
 {
     if( inited)  // 防止accountComboBox当前值改变的时候触发
@@ -369,7 +360,7 @@ void AccountPage::showNormalTransactions()
         // 金额
         AssetInfo assetInfo = CDC::getInstance()->assetInfoMap.value(detail.assetAmount.assetId);
         unsigned long long amount = 0;
-        if( detail.bothMyAccount || transactionInfo.isConfirmed == false)
+        if( detail.bothMyAccount || transactionInfo.isConfirmed == false || detail.assetAmount.amount == 0)
         {
             amount = detail.assetAmount.amount;
         }

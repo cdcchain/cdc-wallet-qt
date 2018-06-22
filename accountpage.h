@@ -74,7 +74,6 @@ private:
     QString registeredLabelString;
     bool assetUpdating;
 
-    void paintEvent(QPaintEvent*e);
     void init();
     void showTransactions();
     void showNormalTransactions();
