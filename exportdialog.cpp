@@ -10,6 +10,7 @@
 #include "commondialog.h"
 #include "dialog/exportsetpwddialog.h"
 #include "AES/aesencryptor.h"
+#include "pubic_define.h"
 
 #include <QDir>
 #include <QFileDialog>
@@ -49,6 +50,8 @@ ExportDialog::ExportDialog( QString name, QWidget *parent) :
 #endif
     ui->pathLineEdit->setStyleSheet("color:black;border:1px solid #CCCCCC;border-radius:3px;");
     ui->pathLineEdit->setTextMargins(8,0,0,0);
+    ui->exportBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:3px;}");
+    ui->cancelBtn->setStyleSheet("QToolButton{background-color:#ffffff;color:#484848;border:1px solid rgb("STR_BUTTON_COLOR");border-radius:3px;}");
 }
 
 ExportDialog::~ExportDialog()

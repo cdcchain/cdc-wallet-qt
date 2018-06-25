@@ -12,6 +12,7 @@
 #include "control/shadowwidget.h"
 #include "dialog/importenterpwddialog.h"
 #include "AES/aesencryptor.h"
+#include "pubic_define.h"
 
 #include <QDir>
 #include <QFileDialog>
@@ -38,7 +39,11 @@ ImportDialog::ImportDialog(QWidget *parent) :
     connect( CDC::getInstance(), SIGNAL(jsonDataUpdated(QString)), this, SLOT(jsonDataUpdated(QString)));
 
     ui->importBtn->setEnabled(false);
-
+    ui->importBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:3px;}"
+                                 "QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}"
+                                 "QToolButton:disabled{background-color:#cecece;}");
+    ui->cancelBtn->setStyleSheet("QToolButton{background-color:#ffffff;color:#484848;border:1px solid rgb("STR_BUTTON_COLOR");border-radius:3px;}"
+                                 "QToolButton:hover{color:rgb("STR_BUTTON_COLOR");}");
     ui->privateKeyLineEdit->setStyleSheet("color:black;border:1px solid #CCCCCC;border-radius:3px;");
     ui->privateKeyLineEdit->setTextMargins(8,0,0,0);
     ui->privateKeyLineEdit->setFocus();
@@ -163,9 +168,14 @@ void ImportDialog::on_importBtn_clicked()
         if( (privateKey.size() == 51 || privateKey.size() == 52) && (privateKey.startsWith("5") || privateKey.startsWith("KL")) )
         {
             CDC::getInstance()->postRPC( toJsonFormat( "id_wallet_import_private_key", "wallet_import_private_key", QStringList() << privateKey));
-
-             ui->importBtn->setEnabled(false);
-             shadowWidget->show();
+            ui->importBtn->setEnabled(false);
+            shadowWidget->show();
+        }
+        else if (privateKey.size() == 64)
+        {
+            CDC::getInstance()->postRPC( toJsonFormat( "id_wallet_import_ethereum_private_key", "wallet_import_ethereum_private_key", QStringList() << privateKey));
+            ui->importBtn->setEnabled(false);
+            shadowWidget->show();
         }
         else
         {
@@ -183,7 +193,7 @@ QString toThousandFigure( int);
 
 void ImportDialog::jsonDataUpdated(QString id)
 {
-    if( id == "id_wallet_import_private_key")
+    if( id == "id_wallet_import_private_key" || id == "id_wallet_import_ethereum_private_key")
     {
         shadowWidget->hide();
 
@@ -207,35 +217,22 @@ void ImportDialog::jsonDataUpdated(QString id)
                 mutexForAddressMap.lock();
                 int size = CDC::getInstance()->addressMap.size();
                 mutexForAddressMap.unlock();
-
                 mutexForConfigFile.lock();
                 CDC::getInstance()->configFile->setValue( QString("/accountInfo/") + QString::fromLocal8Bit("账户") + toThousandFigure(size+1),name);
                 mutexForConfigFile.unlock();
                 CDC::getInstance()->balanceMapInsert( name, "0.00000 " + QString(ASSET_NAME));
                 CDC::getInstance()->registerMapInsert( name, "UNKNOWN");
                 CDC::getInstance()->addressMapInsert( name, CDC::getInstance()->getAddress(name));
-
                 emit accountImported();
-
                 CommonDialog commonDialog(CommonDialog::OkOnly);
                 commonDialog.setText( name + tr( " has been imported!"));
                 commonDialog.pop();
 
-//                RpcThread* rpcThread = new RpcThread;
-//                connect(rpcThread,SIGNAL(finished()),rpcThread,SLOT(deleteLater()));
-//                rpcThread->setLogin("a","b");
-//                rpcThread->setWriteData( toJsonFormat( "id_scan", "scan", QStringList() << "0" ));
-//                rpcThread->setWriteData( toJsonFormat( "id_wallet_scan_transaction", "wallet_scan_transaction", QStringList() << "ALL" << "true" ));
-//                rpcThread->start();
-
                 CDC::getInstance()->postRPC( toJsonFormat( "id_scan", "scan", QStringList() << "0" ));
                 CDC::getInstance()->postRPC( toJsonFormat( "id_wallet_scan_transaction", "wallet_scan_transaction", QStringList() << "ALL" << "true" ));
 
-
                 close();
-//                emit accepted();
             }
-
         }
         else if( result.mid(0,8) == "\"error\":")
         {
@@ -267,7 +264,12 @@ void ImportDialog::jsonDataUpdated(QString id)
                 shadowWidget->show();
                 return;
             }
-            else // 如果输入框中是 私钥
+            else if (ui->privateKeyLineEdit->text().size() == 64)
+            {
+                CDC::getInstance()->postRPC( toJsonFormat( "id_wallet_import_ethereum_private_key_" + name, "wallet_import_ethereum_private_key", QStringList() << ui->privateKeyLineEdit->text() << name << "true" ));
+                shadowWidget->show();
+            }
+            else
             {
                 CDC::getInstance()->postRPC( toJsonFormat( "id_wallet_import_private_key_" + name, "wallet_import_private_key", QStringList() << ui->privateKeyLineEdit->text() << name << "true" ));
                 shadowWidget->show();
@@ -277,7 +279,7 @@ void ImportDialog::jsonDataUpdated(QString id)
         return;
     }
 
-    if( id.startsWith("id_wallet_import_private_key_") )
+    if( id.startsWith("id_wallet_import_private_key_") || id.startsWith("id_wallet_import_ethereum_private_key_"))
     {
         ui->importBtn->setEnabled(true);
         shadowWidget->hide();
@@ -306,13 +308,10 @@ void ImportDialog::jsonDataUpdated(QString id)
             CommonDialog commonDialog(CommonDialog::OkOnly);
             commonDialog.setText( name + tr(" has been imported!") );
             commonDialog.pop();
-
             CDC::getInstance()->postRPC( toJsonFormat( "id_scan", "scan", QStringList() << "0" ));
             CDC::getInstance()->postRPC( toJsonFormat( "id_wallet_scan_transaction", "wallet_scan_transaction", QStringList() << "ALL" << "true" ));
 
-
             close();
-//            emit accepted();
         }
         else if( result.mid(0,8) == "\"error\":")
         {

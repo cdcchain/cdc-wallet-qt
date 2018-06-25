@@ -7,7 +7,7 @@
 #include "ui_rightclickmenudialog.h"
 #include "../blockchain.h"
 #include "commondialog.h"
-
+#include "pubic_define.h"
 #ifdef WIN32
 #include "Windows.h"
 #endif
@@ -23,20 +23,20 @@ RightClickMenuDialog::RightClickMenuDialog( QString name, QWidget *parent) :
     ui->setupUi(this);
     setWindowFlags(Qt::Popup);
 
-    ui->copyBtn->setStyleSheet("QPushButton{background-color:#ffffff;color:rgb(105,67,155);border:1px solid rgb(239,239,239);border-radius:0px;}"
-                                  "QPushButton:hover{background-color:rgb(105,67,155);color:#ffffff;border-radius:0px;}"
+    ui->copyBtn->setStyleSheet("QPushButton{background-color:#ffffff;color:rgb("STR_BUTTON_COLOR");border:1px solid rgb(239,239,239);border-radius:0px;}"
+                                  "QPushButton:hover{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border-radius:0px;}"
                                   );
-    ui->transferBtn->setStyleSheet("QPushButton{background-color:#ffffff;color:rgb(105,67,155);border:1px solid rgb(239,239,239);border-radius:0px;}"
-                                  "QPushButton:hover{background-color:rgb(105,67,155);color:#ffffff;border-radius:0px;}"
+    ui->transferBtn->setStyleSheet("QPushButton{background-color:#ffffff;color:rgb("STR_BUTTON_COLOR");border:1px solid rgb(239,239,239);border-radius:0px;}"
+                                  "QPushButton:hover{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border-radius:0px;}"
                                   );
-    ui->renameBtn->setStyleSheet("QPushButton{background-color:#ffffff;color:rgb(105,67,155);border:1px solid rgb(239,239,239);border-radius:0px;}"
-                                 "QPushButton:hover{background-color:rgb(105,67,155);color:#ffffff;border-radius:0px;}"
+    ui->renameBtn->setStyleSheet("QPushButton{background-color:#ffffff;color:rgb("STR_BUTTON_COLOR");border:1px solid rgb(239,239,239);border-radius:0px;}"
+                                 "QPushButton:hover{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border-radius:0px;}"
                                  );
-    ui->exportBtn->setStyleSheet("QPushButton{background-color:#ffffff;color:rgb(105,67,155);border:1px solid rgb(239,239,239);border-radius:0px;}"
-                                 "QPushButton:hover{background-color:rgb(105,67,155);color:#ffffff;border-radius:0px;}"
+    ui->exportBtn->setStyleSheet("QPushButton{background-color:#ffffff;color:rgb("STR_BUTTON_COLOR");border:1px solid rgb(239,239,239);border-radius:0px;}"
+                                 "QPushButton:hover{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border-radius:0px;}"
                                  );
-    ui->deleteBtn->setStyleSheet("QPushButton{background-color:#ffffff;color:rgb(105,67,155);border:1px solid rgb(239,239,239);border-radius:0px;}"
-                                 "QPushButton:hover{background-color:rgb(105,67,155);color:#ffffff;border-radius:0px;}"
+    ui->deleteBtn->setStyleSheet("QPushButton{background-color:#ffffff;color:rgb("STR_BUTTON_COLOR");border:1px solid rgb(239,239,239);border-radius:0px;}"
+                                 "QPushButton:hover{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border-radius:0px;}"
                                  );
 
     if( CDC::getInstance()->registerMapValue(name) != "NO" )  // 如果是已注册账户 不显示修改账户名选项

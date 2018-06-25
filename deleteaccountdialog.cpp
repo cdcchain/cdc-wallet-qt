@@ -8,6 +8,7 @@
 #include "blockchain.h"
 #include "rpcthread.h"
 #include "commondialog.h"
+#include "pubic_define.h"
 
 #include <QDebug>
 #include <QFocusEvent>
@@ -21,10 +22,8 @@ DeleteAccountDialog::DeleteAccountDialog(QString name , QWidget *parent) :
     ui->setupUi(this);
 
     setParent(CDC::getInstance()->mainFrame);
-
     setAttribute(Qt::WA_TranslucentBackground, true);
     setWindowFlags(Qt::FramelessWindowHint);
-
 
     ui->widget->setObjectName("widget");
     ui->widget->setStyleSheet("#widget {background-color:rgba(10, 10, 10,100);}");
@@ -33,20 +32,19 @@ DeleteAccountDialog::DeleteAccountDialog(QString name , QWidget *parent) :
 
     connect( CDC::getInstance(), SIGNAL(jsonDataUpdated(QString)), this, SLOT(jsonDataUpdated(QString)));
 
-
     ui->pwdLineEdit->setStyleSheet("color:black;border:1px solid #CCCCCC;border-radius:3px;");
     ui->pwdLineEdit->setPlaceholderText( tr("Login password"));
     ui->pwdLineEdit->setTextMargins(8,0,0,0);
     ui->pwdLineEdit->setAttribute(Qt::WA_InputMethodEnabled, false);
 
-
-
+    ui->okBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:3px;}"
+                             "QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}"
+                             "QToolButton:disabled{background-color:#cecece;}");
     ui->okBtn->setText(tr("Ok"));
-
-    ui->cancelBtn->setText(tr("Cancel"));
-
     ui->okBtn->setEnabled(false);
-
+    ui->cancelBtn->setStyleSheet("QToolButton{background-color:#ffffff;color:#484848;border:1px solid rgb("STR_BUTTON_COLOR");border-radius:3px;}"
+                                 "QToolButton:hover{color:rgb("STR_BUTTON_COLOR");}");
+    ui->cancelBtn->setText(tr("Cancel"));
     ui->pwdLineEdit->setFocus();
 }
 

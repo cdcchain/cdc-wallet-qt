@@ -7,6 +7,7 @@
 #include "ui_renamedialog.h"
 #include "../blockchain.h"
 #include "../rpcthread.h"
+#include "pubic_define.h"
 
 #include <QDebug>
 #include <QMovie>
@@ -36,10 +37,12 @@ RenameDialog::RenameDialog(QWidget *parent) :
     ui->nameLineEdit->setAttribute(Qt::WA_InputMethodEnabled, false);
 
 
-
+    ui->okBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:3px;}"
+                             "QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}QToolButton:disabled{background-color:#cecece;}");
     ui->okBtn->setText(tr("Ok"));
     ui->okBtn->setEnabled(false);
-
+    ui->cancelBtn->setStyleSheet("QToolButton{background-color:#ffffff;color:#484848;border:1px solid rgb("STR_BUTTON_COLOR
+                                 ");border-radius:3px;}QToolButton:hover{color:rgb("STR_BUTTON_COLOR");}");
     ui->cancelBtn->setText(tr("Cancel"));
 
     QRegExp regx("[a-z][a-z0-9]+$");
