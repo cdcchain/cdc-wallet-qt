@@ -45,7 +45,7 @@ AssetPage::AssetPage(QWidget *parent) :
     ui->myAssetWidget->horizontalHeader()->setStyleSheet("QHeaderView:section{color:white;background-color:rgb("
                                                          STR_MENU_BACKGROUND_COLOR");border:1px solid grey;}");
     ui->myAssetWidget->horizontalHeader()->setVisible(true);
-    ui->addTokenBtn->setStyleSheet("QToolButton{color:rgb("STR_BUTTON_COLOR");border:1px solid rgb("STR_BUTTON_COLOR");border-radius:10px;}QToolButton:hover{color:rgb("STR_BUTTON_COLOR");}");
+    ui->addTokenBtn->setStyleSheet(QTOOL_BUTTON_STYLE);
 }
 
 AssetPage::~AssetPage()

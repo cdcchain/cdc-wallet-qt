@@ -35,7 +35,7 @@ CommonDialog::CommonDialog(commonDialogType type, QWidget *parent) :
     yesOrNO = false;
 
     ui->okBtn->setText(tr("Ok"));
-    ui->okBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:3px;}QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}");
+    ui->okBtn->setStyleSheet(QTOOL_BUTTON_STYLE);
     ui->cancelBtn->setText(tr("Cancel"));
     ui->cancelBtn->setStyleSheet("QToolButton{background-color:#ffffff;color:#484848;border:1px solid rgb("STR_BUTTON_COLOR");border-radius:3px;}QToolButton:hover{color:rgb("STR_BUTTON_COLOR");}");
 

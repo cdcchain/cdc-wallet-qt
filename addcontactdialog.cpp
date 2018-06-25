@@ -35,7 +35,7 @@ AddContactDialog::AddContactDialog(QWidget *parent) :
     ui->remarkLineEdit->setStyleSheet("color:black;border:1px solid #CCCCCC;border-radius:3px;");
     ui->remarkLineEdit->setTextMargins(8,0,0,0);
     ui->okBtn->setEnabled(false);
-    ui->okBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:3px;}QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}");
+    ui->okBtn->setStyleSheet(QTOOL_BUTTON_STYLE);
     ui->cancelBtn->setStyleSheet("QToolButton{background-color:#ffffff;color:#484848;border:1px solid rgb("STR_BUTTON_COLOR");border-radius:3px;}QToolButton:hover{color:rgb("STR_BUTTON_COLOR");}");
     ui->addressLineEdit->setFocus();
 
