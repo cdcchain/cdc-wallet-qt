@@ -42,6 +42,7 @@ SelectWalletPathWidget::SelectWalletPathWidget(QWidget *parent) :
     ui->logo->setStyleSheet("background-image: url(:/pic/cplpic/logo.png);");
     ui->logo->setGeometry(14,14,102,48);
     ui->version->setStyleSheet("color: white;");
+    ui->version->setText("Wallet V"WALLET_VERSION);
     ui->walletIcon->setStyleSheet("background-image: url(:/pic/cplpic/walletIcon.png);background-repeat: no-repeat;");
 
     getUpdateXml();

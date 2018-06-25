@@ -47,7 +47,6 @@ TitleBar::TitleBar(QWidget *parent) :
     connect( timer, SIGNAL(timeout()), this, SLOT(onTimeOut()));
     timer->setInterval(10000);
     timer->start();
-
     ui->version->setText( QString(" Wallet  v") + WALLET_VERSION);
 
     onTimeOut();
