@@ -117,6 +117,7 @@ void TransferConfirmDialog::on_cancelBtn_clicked()
 
 void TransferConfirmDialog::on_pwdLineEdit_textChanged(const QString &arg1)
 {
+    ui->tipLabel2->clear();
     if( arg1.indexOf(' ') > -1)
     {
         ui->pwdLineEdit->setText( ui->pwdLineEdit->text().remove(' '));

@@ -5,7 +5,7 @@
 
 #include "importenterpwddialog.h"
 #include "ui_importenterpwddialog.h"
-
+#include "pubic_define.h"
 #include <QDebug>
 
 #include "blockchain.h"
@@ -34,8 +34,12 @@ ImportEnterPwdDialog::ImportEnterPwdDialog(QWidget *parent) :
     ui->pkPwdLineEdit->setTextMargins(8,0,0,0);
     ui->pkPwdLineEdit->setContextMenuPolicy(Qt::NoContextMenu);
     ui->pkPwdLineEdit->setFocus();
-
+    ui->okBtn->setStyleSheet("QToolButton{background-color:rgb("STR_BUTTON_COLOR");color:#ffffff;border:none;border-radius:3px;}"
+                             "QToolButton:hover{background-color:rgb("STR_BUTTON_COLOR");}"
+                             "QToolButton:disabled{background-color:#cecece;}");
     ui->okBtn->setEnabled(false);
+    ui->cancelBtn->setStyleSheet("QToolButton{background-color:#ffffff;color:#484848;border:1px solid rgb("STR_BUTTON_COLOR");border-radius:3px;}"
+                                 "QToolButton:hover{color:rgb("STR_BUTTON_COLOR");}");
 }
 
 ImportEnterPwdDialog::~ImportEnterPwdDialog()

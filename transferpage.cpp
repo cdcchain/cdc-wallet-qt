@@ -238,8 +238,7 @@ void TransferPage::on_sendBtn_clicked()
 
                 CDC::getInstance()->postRPC( toJsonFormat( "id_contract_call_transfer+" + contractAddress + "+" + accountAddress, "contract_call",
                                                              QStringList() << contractAddress << ui->accountComboBox->currentText()<< "transfer" << accountAddress + "," + QString::number( ui->amountLineEdit->text().toDouble() * info.precision,'f',0)
-                                                             << ASSET_NAME << "0.001"
-                                                             ));
+                                                             << ASSET_NAME << "1"));
             }
         }
 
