@@ -82,7 +82,7 @@ SetDialog::SetDialog(QWidget *parent) :
     qDebug() << "transactionFee: " << CDC::getInstance()->transactionFee;
     ui->feeLineEdit->setText(QString::number(float_t(CDC::getInstance()->transactionFee) / CDC::getInstance()->assetInfoMap.value(0).precision));
 
-    QRegExp rx("^([1-9]\\d*)(?:\\.\\d{0,2})?$|(^\\t?$)");
+    QRegExp rx("^([0-9]\\d*)(?:\\.\\d{0,2})?$|(^\\t?$)");
     QRegExpValidator *pReg = new QRegExpValidator(rx, this);
     ui->feeLineEdit->setValidator(pReg);
 
