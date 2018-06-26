@@ -42,8 +42,8 @@ RightClickMenuDialog::RightClickMenuDialog( QString name, QWidget *parent) :
     if( CDC::getInstance()->registerMapValue(name) != "NO" )  // 如果是已注册账户 不显示修改账户名选项
     {
         ui->renameBtn->hide();
-        ui->exportBtn->move(0,35);
-        setGeometry(0,0,116,71);
+        ui->deleteBtn->move(0,71);
+        setGeometry(0,0,116,140);
     }
 
 }

@@ -552,7 +552,6 @@ bool MainPage::eventFilter(QObject *watched, QEvent *e)
             pos -= QPoint(0,47);
             int row = ui->accountTableWidget->row(ui->accountTableWidget->itemAt(pos));
             if( row == -1)    return false;
-
             if( ui->accountTableWidget->item(row,0) == NULL)   return false;
             QString name = ui->accountTableWidget->item(row,0)->text();
             RightClickMenuDialog* rightClickMenuDialog = new RightClickMenuDialog( name, this);
@@ -564,8 +563,6 @@ bool MainPage::eventFilter(QObject *watched, QEvent *e)
             rightClickMenuDialog->exec();
 
             return true;
-
-
         }
     }
 
