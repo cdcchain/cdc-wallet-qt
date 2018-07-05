@@ -17,11 +17,13 @@ QString getBtnStyle(bool isSelected, int pageIdx)
 {
     QString style;
     QString icon;
-    QString padding = "0px 15px 0px 0px";
+    QString padding = "0px 15px 0px 10px";
     switch (pageIdx)
     {
     case 1:
         icon = "/pic/cplpic/accountIcon.png";
+        if (CDC::getInstance()->language != "Simplified Chinese")
+            padding = "0px 5px 0px 15px";
         break;
     case 2:
         icon = "/pic/cplpic/assetIcon.png";
@@ -31,10 +33,15 @@ QString getBtnStyle(bool isSelected, int pageIdx)
         break;
     case 4:
         icon = "/pic/cplpic/send.png";
+        if (CDC::getInstance()->language != "Simplified Chinese")
+            padding = "0px 5px 0px 0px";
         break;
     case 5:
         icon = "/pic/cplpic/contactIcon.png";
-        padding = "0px 5px 0px 0px";
+        if (CDC::getInstance()->language != "Simplified Chinese")
+            padding = "0px 5px 0px 15px";
+        else
+            padding = "0px 5px 0px 15px";
         break;
     }
     if (isSelected)

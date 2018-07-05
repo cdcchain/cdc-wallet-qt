@@ -24,6 +24,7 @@ ShadowWidget::ShadowWidget(QWidget *parent) :
 
     ui->gifLabel->setGeometry(0,0,34,34);
     ui->gifLabel->show();
+    ui->tipLabel->hide();
 
     retranslator();
 

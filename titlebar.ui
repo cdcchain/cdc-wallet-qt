@@ -25,8 +25,8 @@
   <widget class="QToolButton" name="minBtn">
    <property name="geometry">
     <rect>
-     <x>900</x>
-     <y>30</y>
+     <x>898</x>
+     <y>28</y>
      <width>20</width>
      <height>20</height>
     </rect>
@@ -44,8 +44,8 @@
   <widget class="QToolButton" name="closeBtn">
    <property name="geometry">
     <rect>
-     <x>927</x>
-     <y>30</y>
+     <x>928</x>
+     <y>28</y>
      <width>20</width>
      <height>20</height>
     </rect>
@@ -63,7 +63,7 @@
   <widget class="QLabel" name="divLineLabel">
    <property name="geometry">
     <rect>
-     <x>850</x>
+     <x>854</x>
      <y>30</y>
      <width>1</width>
      <height>16</height>
@@ -80,9 +80,9 @@
    <property name="geometry">
     <rect>
      <x>868</x>
-     <y>30</y>
-     <width>21</width>
-     <height>21</height>
+     <y>28</y>
+     <width>20</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="cursor">
@@ -98,10 +98,10 @@
   <widget class="QToolButton" name="newsBtn">
    <property name="geometry">
     <rect>
-     <x>696</x>
-     <y>27</y>
-     <width>21</width>
-     <height>21</height>
+     <x>708</x>
+     <y>28</y>
+     <width>20</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="cursor">
@@ -145,7 +145,7 @@
     <rect>
      <x>790</x>
      <y>26</y>
-     <width>51</width>
+     <width>50</width>
      <height>24</height>
     </rect>
    </property>
@@ -171,8 +171,8 @@ background:transparent;</string>
   <widget class="QToolButton" name="lockBtn">
    <property name="geometry">
     <rect>
-     <x>730</x>
-     <y>26</y>
+     <x>742</x>
+     <y>28</y>
      <width>20</width>
      <height>20</height>
     </rect>
@@ -190,7 +190,7 @@ background:transparent;</string>
   <widget class="QLabel" name="divLineLabel_2">
    <property name="geometry">
     <rect>
-     <x>770</x>
+     <x>776</x>
      <y>30</y>
      <width>1</width>
      <height>16</height>
