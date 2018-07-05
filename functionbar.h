@@ -48,6 +48,7 @@ private slots:
 
 private:
     Ui::FunctionBar *ui;
+    int currentPageIndex;
 };
 
 #endif // FUNCTIONBAR_H

@@ -15,7 +15,7 @@
 #include <QDialog>
 
 #define ASSET_NAME "CDC"
-#define WALLET_VERSION "0.1.2 test"           // 版本号
+#define WALLET_VERSION "0.1.3 test"           // 版本号
 #define AUTO_REFRESH_TIME 1000           // 自动刷新时间(ms)
 
 //  密码输入错误5次后 锁定一段时间 (秒)

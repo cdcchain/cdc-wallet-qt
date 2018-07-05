@@ -130,6 +130,9 @@ void TitleBar::saved()
 void TitleBar::retranslator()
 {
     ui->retranslateUi(this);
+
+    ui->version->setText( QString(" Wallet  v") + WALLET_VERSION);
+
 }
 
 void TitleBar::jsonDataUpdated(QString id)

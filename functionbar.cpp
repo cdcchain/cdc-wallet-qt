@@ -141,7 +141,7 @@ void FunctionBar::on_contactBtn_clicked()
 
 void FunctionBar::choosePage(int pageIndex)
 {
-
+    currentPageIndex = pageIndex;
     switch (pageIndex) {
     case 1:
         ui->accountBtn->setStyleSheet(getBtnStyle(true, 1));
@@ -191,5 +191,6 @@ void FunctionBar::choosePage(int pageIndex)
 void FunctionBar::retranslator()
 {
     ui->retranslateUi(this);
+    choosePage(currentPageIndex);
 }
 
